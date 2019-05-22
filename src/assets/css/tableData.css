@@ -1,0 +1,30 @@
+@import "iconfont/iconfont.css";
+.table_name i {
+  color: #61b363;
+}
+.table_name span {
+  color: #20A0FF;
+  cursor: pointer;
+}
+.table_mobile {
+  cursor: pointer;
+}
+.table_mobile span.mobileNum {
+  height: 21px;
+  background-color: #03c48a;
+  display: block;
+  float: left;
+  padding: 0 3px;
+  border-radius: 5px 5px;
+  color: #fff;
+  margin-right: 5px;
+  margin-top: 3px;
+}
+.table_mobile i.seeMobile {
+  color: #03c48a;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 6px;
+  cursor: pointer;
+  vertical-align: -1px;
+}

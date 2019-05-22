@@ -1,0 +1,893 @@
+/*滚动条样式*/
+::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 10px;
+  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 3px;
+  background: #99cbe2;
+}
+::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  border-radius: 0;
+  background: #e3e3e3;
+}
+.modals .ivu-modal-footer {
+  display: none;
+}
+.modals .ivu-modal-body {
+  padding: 0;
+  overflow: visible;
+}
+.modals .ivu-modal-close .ivu-icon-ios-close {
+  display: none;
+}
+.modals .closeModal {
+  font-size: 31px;
+  color: #999;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+.dialModal .modalCon {
+  padding: 20px 20px 12px 10px;
+  display: flex;
+}
+.dialModal .modalCon .left {
+  width: 210px;
+  position: relative;
+}
+.dialModal .modalCon .left .position {
+  color: #ffbc3b;
+  line-height: 28px;
+}
+.dialModal .modalCon .left .stuInfo {
+  margin-top: 20px;
+  color: #656e7d;
+  font-size: 18px;
+  text-align: center;
+  line-height: 24px;
+}
+.dialModal .modalCon .left .stuInfo .dialBg {
+  margin-top: 20px;
+  margin-bottom: 16px;
+  width: 100%;
+  height: 80px;
+  position: relative;
+}
+.dialModal .modalCon .left .stuInfo .dialBg #loading-center-absolute {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 24px;
+  width: 108px;
+  margin-top: -12px;
+  margin-left: -54px;
+}
+.dialModal .modalCon .left .stuInfo .dialBg #loading-center-absolute .object {
+  width: 2px;
+  height: 24px;
+  margin-right: 4px;
+  background-color: #FFF;
+  -webkit-animation: animate 1s infinite;
+  animation: animate 1s infinite;
+  float: left;
+  background-color: #61B363;
+}
+.dialModal .modalCon .left .stuInfo .dialBg #loading-center-absolute .object:last-child {
+  margin-right: 0px;
+}
+.dialModal .modalCon .left .stuInfo .dialBg #loading-center-absolute .object:nth-child(10) {
+  -webkit-animation-delay: 0.9s;
+  animation-delay: 0.9s;
+}
+.dialModal .modalCon .left .stuInfo .dialBg #loading-center-absolute .object:nth-child(9),
+.dialModal .modalCon .left .stuInfo .dialBg #loading-center-absolute .object:nth-child(19) {
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+.dialModal .modalCon .left .stuInfo .dialBg #loading-center-absolute .object:nth-child(8),
+.dialModal .modalCon .left .stuInfo .dialBg #loading-center-absolute .object:nth-child(18) {
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+.dialModal .modalCon .left .stuInfo .dialBg #loading-center-absolute .object:nth-child(7),
+.dialModal .modalCon .left .stuInfo .dialBg #loading-center-absolute .object:nth-child(17) {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+.dialModal .modalCon .left .stuInfo .dialBg #loading-center-absolute .object:nth-child(6),
+.dialModal .modalCon .left .stuInfo .dialBg #loading-center-absolute .object:nth-child(16) {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+.dialModal .modalCon .left .stuInfo .dialBg #loading-center-absolute .object:nth-child(5),
+.dialModal .modalCon .left .stuInfo .dialBg #loading-center-absolute .object:nth-child(15) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+.dialModal .modalCon .left .stuInfo .dialBg #loading-center-absolute .object:nth-child(4),
+.dialModal .modalCon .left .stuInfo .dialBg #loading-center-absolute .object:nth-child(14) {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.dialModal .modalCon .left .stuInfo .dialBg #loading-center-absolute .object:nth-child(3),
+.dialModal .modalCon .left .stuInfo .dialBg #loading-center-absolute .object:nth-child(13) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+.dialModal .modalCon .left .stuInfo .dialBg #loading-center-absolute .object:nth-child(2),
+.dialModal .modalCon .left .stuInfo .dialBg #loading-center-absolute .object:nth-child(12) {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+@-webkit-keyframes animate {
+  50% {
+    -ms-transform: scaleY(0);
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+  }
+}
+@keyframes animate {
+  50% {
+    -ms-transform: scaleY(0);
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+  }
+}
+.dialModal .modalCon .left .stuInfo .dialBg .dialPhone {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -40px;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  z-index: 3;
+  background: url("../../assets/image/dial1.png") no-repeat center;
+}
+.dialModal .modalCon .left .stuInfo .dialBg .dialPhone:hover {
+  background: url("../../assets/image/dial1-2.png") no-repeat center;
+}
+.dialModal .modalCon .left .stuInfo .dialBg .dialPhone:active {
+  background: url("../../assets/image/dial1-3.png") no-repeat center;
+}
+.dialModal .modalCon .left .stuInfo .dialBg .dialPhone.dialing {
+  background: url("../../assets/image/dial2.png") no-repeat center;
+}
+.dialModal .modalCon .left .stuInfo .dialBg .dialPhone.dialing:hover {
+  background: url("../../assets/image/dial2-2.png") no-repeat center;
+}
+.dialModal .modalCon .left .stuInfo .dialBg .dialPhone.dialing:active {
+  background: url("../../assets/image/dial2-3.png") no-repeat center;
+}
+.dialModal .modalCon .left .dialRecord {
+  margin-top: 14px;
+  width: 210px;
+  height: 248px;
+  overflow-y: scroll;
+  background: #f7fafc;
+  border-radius: 4px;
+  padding-left: 11px;
+  padding-top: 6px;
+}
+.dialModal .modalCon .left .dialRecord li {
+  margin-bottom: 18px;
+}
+.dialModal .modalCon .left .dialRecord li p.dialTime {
+  color: #c9ced6;
+  font-size: 12px;
+}
+.dialModal .modalCon .left .dialRecord li p.dialTime span {
+  color: #ffbc3b;
+  margin-left: 22px;
+}
+.dialModal .modalCon .left .dialRecord li p.dialResult {
+  color: #656e7d;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.dialModal .modalCon .center {
+  width: 330px;
+  margin-left: 30px;
+}
+.dialModal .modalCon .center p.label {
+  color: #ffbc3b;
+  line-height: 28px;
+}
+.dialModal .modalCon .center .ivu-form-item {
+  margin-bottom: 14px;
+}
+.dialModal .modalCon .center .twoLevel.ivu-form-item .ivu-form-item-label {
+  width: 330px !important;
+}
+.dialModal .modalCon .center .twoLevel.ivu-form-item .ivu-form-item-content {
+  margin-left: 0 !important;
+}
+.dialModal .modalCon .center textarea.ivu-input {
+  width: 100%;
+  background-color: #f7fafc;
+  border-radius: 0;
+}
+.dialModal .modalCon .center .ivu-radio-wrapper {
+  width: 70px;
+  height: 28px;
+  border-radius: 14px;
+  text-align: center;
+  line-height: 28px;
+  background: #FFEFEC;
+  border: 1px solid #ff7a5e;
+  color: #ff7a5e;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.dialModal .modalCon .center .ivu-radio-wrapper .ivu-radio {
+  display: none;
+}
+.dialModal .modalCon .center .ivu-radio-wrapper.ivu-radio-wrapper-checked,
+.dialModal .modalCon .center .ivu-radio-wrapper .ivu-checkbox-wrapper-checked {
+  background: #ff7a5e;
+  border: 1px solid #ff7a5e;
+  color: #ffffff;
+}
+.dialModal .modalCon .center .ivu-radio-wrapper:nth-child(2) {
+  background: #FFF6E5;
+  border: 1px solid #ffbc3b;
+  color: #ffbc3b;
+}
+.dialModal .modalCon .center .ivu-radio-wrapper:nth-child(2).ivu-radio-wrapper-checked,
+.dialModal .modalCon .center .ivu-radio-wrapper:nth-child(2) .ivu-checkbox-wrapper-checked {
+  background: #ffbc3b;
+  border: 1px solid #ffbc3b;
+  color: #ffffff;
+}
+.dialModal .modalCon .center .ivu-radio-wrapper:nth-child(3) {
+  background: #F1FCFF;
+  border: 1px solid #07C4FE;
+  color: #07C4FE;
+  margin-right: 0;
+}
+.dialModal .modalCon .center .ivu-radio-wrapper:nth-child(3).ivu-radio-wrapper-checked,
+.dialModal .modalCon .center .ivu-radio-wrapper:nth-child(3) .ivu-checkbox-wrapper-checked {
+  background: #07C4FE;
+  border: 1px solid #07C4FE;
+  color: #ffffff;
+}
+.dialModal .modalCon .center > p:first-child {
+  margin-bottom: 11px;
+}
+.dialModal .modalCon .center > p > span:first-child {
+  color: #c9ced6;
+  font-size: 12px;
+  margin-right: 21px;
+  margin-bottom: 10px;
+}
+.dialModal .modalCon .center > div {
+  margin-bottom: 20px;
+}
+.dialModal .modalCon .center .recordCon p:nth-child(2) {
+  width: 100%;
+  height: 90px;
+  background-color: #f7fafc;
+  margin-top: 3px;
+  padding: 10px;
+}
+.dialModal .modalCon .center .ivu-select-selection {
+  background-color: #f5f6f8;
+  height: 28px;
+  border-radius: 14px;
+  border: none;
+}
+.dialModal .modalCon .center .ivu-select-single .ivu-select-selection .ivu-select-placeholder,
+.dialModal .modalCon .center .ivu-select-single .ivu-select-selection .ivu-select-selected-value {
+  line-height: 28px;
+}
+.dialModal .modalCon .center .ivu-input {
+  border: none;
+  background-color: #f5f6f8;
+  height: 28px;
+  border-radius: 14px;
+}
+.dialModal .modalCon .center .ivu-input-icon {
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+}
+.dialModal .modalCon .center .ivu-input:focus {
+  box-shadow: none;
+}
+.dialModal .modalCon .center .priority {
+  display: flex;
+}
+.dialModal .modalCon .center .priority li {
+  width: 70px;
+  height: 28px;
+  border-radius: 14px;
+  text-align: center;
+  line-height: 28px;
+  background: #FFEFEC;
+  border: 1px solid #ff7a5e;
+  color: #ff7a5e;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.dialModal .modalCon .center .priority li.active {
+  background: #ff7a5e;
+  border: 1px solid #ff7a5e;
+  color: #ffffff;
+}
+.dialModal .modalCon .center .priority li:nth-child(2) {
+  background: #FFF6E5;
+  border: 1px solid #ffbc3b;
+  color: #ffbc3b;
+}
+.dialModal .modalCon .center .priority li:nth-child(2).active {
+  background: #ffbc3b;
+  border: 1px solid #ffbc3b;
+  color: #ffffff;
+}
+.dialModal .modalCon .center .priority li:nth-child(3) {
+  background: #F1FCFF;
+  border: 1px solid #07C4FE;
+  color: #07C4FE;
+  margin-right: 0;
+}
+.dialModal .modalCon .center .priority li:nth-child(3).active {
+  background: #07C4FE;
+  border: 1px solid #07C4FE;
+  color: #ffffff;
+}
+.dialModal .modalCon .center .submit {
+  width: 70px;
+  height: 28px;
+  background: #07C4FE;
+  border-radius: 14px;
+  text-align: center;
+  padding: 0;
+  color: #ffffff;
+  border: none;
+  margin-left: 260px;
+  outline: none;
+  cursor: pointer;
+}
+.dialModal .modalCon .center .submit:hover {
+  background: #50d6ff;
+}
+.dialModal .modalCon .right {
+  margin-left: 9px;
+  display: flex;
+}
+.dialModal .modalCon .right .filesShow {
+  text-align: center;
+  color: #07C4FE;
+  width: 11px;
+  line-height: 13px;
+  margin-top: 200px;
+}
+.dialModal .modalCon .right .filesShow span {
+  cursor: pointer;
+}
+.dialModal .modalCon .right .filesShow span i {
+  margin-top: 10px;
+  display: inline-block;
+}
+.dialModal .modalCon .right .relatedFiles {
+  width: 160px;
+  margin-left: 20px;
+}
+.dialModal .modalCon .right .relatedFiles p.search {
+  display: flex;
+  justify-content: space-between;
+}
+.dialModal .modalCon .right .relatedFiles p.search .ivu-input {
+  background-color: #f5f6f8;
+  border: none;
+  border-radius: 0px;
+  border-radius: 14px;
+  text-align: center;
+  height: 28px;
+}
+.dialModal .modalCon .right .relatedFiles p.search .ivu-input:focus {
+  box-shadow: none;
+}
+.dialModal .modalCon .right .relatedFiles p.search button.btn4 {
+  height: 28px;
+  line-height: 28px;
+  width: 28px;
+  border-radius: 14px;
+  text-align: center;
+  padding: 0;
+  color: #ffffff;
+  border: none;
+  background-color: #07C4FE;
+  font-size: 14px;
+}
+.dialModal .modalCon .right .relatedFiles p.search button.btn4 > span {
+  vertical-align: 0;
+}
+.dialModal .modalCon .right .relatedFiles p.search button.btn4:hover {
+  background-color: #50d6ff;
+}
+.dialModal .modalCon .right .relatedFiles p.search button.btn4:focus {
+  box-shadow: none;
+}
+.dialModal .modalCon .right .relatedFiles p.search button.btn4 i {
+  vertical-align: -1px;
+}
+.dialModal .modalCon .right .relatedFiles .relatedFiles2 {
+  padding: 8px 0 10px 10px;
+  margin-top: 20px;
+  width: 160px;
+  height: 300px;
+  background-color: #f7fafc;
+  overflow-y: scroll;
+}
+.dialModal .modalCon .right .relatedFiles .relatedFiles2 li {
+  line-height: 22px;
+  cursor: pointer;
+  color: #656e7d;
+}
+.dialModal .modalCon .right .relatedFiles .relatedFiles2 li:hover {
+  color: #848d9c;
+}
+.dialModal .modalCon .right .relatedFiles .activeFile {
+  font-size: 12px;
+  margin-top: 6px;
+}
+.dialModal .modalCon .right .relatedFiles .activeFile .activeTit {
+  line-height: 21px;
+  color: #c9ced6;
+}
+.dialModal .modalCon .right .relatedFiles .activeFile p:not(:first-child) {
+  line-height: 21px;
+  color: #07C4FE;
+  cursor: pointer;
+}
+.dialModal .modalCon .right .relatedFiles .activeFile p:not(:first-child):hover {
+  color: #50d6ff;
+}
+.title_outer {
+  padding: 5px 0 20px;
+}
+.title_outer .title_inner {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2db7f5;
+  border-bottom: 3px solid #2db7f5;
+  letter-spacing: 1px;
+  padding: 2px 0;
+}
+.arrClassModal .modalCon {
+  padding: 36px 20px 20px 30px;
+}
+.arrClassModal .modalCon .modalTitle {
+  color: #656e7d;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 28px;
+}
+.arrClassModal .modalCon .ivu-form-item {
+  margin-bottom: 20px;
+}
+.arrClassModal .modalCon .ivu-form .ivu-form-item-label {
+  padding: 0;
+  line-height: 32px;
+}
+.arrClassModal .modalCon .ivu-form .ivu-form-item-label {
+  color: #c9ced6;
+}
+.arrClassModal .modalCon .ivu-select-single .ivu-select-selection {
+  height: 28px;
+  border: none;
+  background-color: #f5f6f8;
+  border-radius: 14px;
+}
+.arrClassModal .modalCon .ivu-form-item-content {
+  color: #656e7d;
+}
+.arrClassModal .modalCon .chooseDate .ivu-input {
+  border: none;
+  background-color: #f5f6f8;
+  height: 28px;
+  border-radius: 14px;
+}
+.arrClassModal .modalCon .chooseDate .ivu-input-icon {
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+}
+.arrClassModal .modalCon .ivu-input:focus {
+  box-shadow: none;
+}
+.arrClassModal .modalCon .wrongUpload {
+  display: inline-block;
+}
+.arrClassModal .modalCon .wrongUpload .wrongBtn {
+  width: 90px;
+  height: 28px;
+  background: #07C4FE;
+  border-radius: 14px;
+  text-align: center;
+  padding: 0;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  line-height: 27px;
+  font-size: 14px;
+}
+.arrClassModal .modalCon .wrongUpload .wrongBtn:hover {
+  background: #50d6ff;
+  color: #fff;
+}
+.arrClassModal .modalCon .wrongUpload .ivu-btn.ivu-btn-loading {
+  position: absolute;
+}
+.arrClassModal .modalCon .line {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.arrClassModal .modalCon .line .label_name .ivu-form-item-label {
+  width: 50px !important;
+}
+.arrClassModal .modalCon .line .label_name .ivu-form-item-content {
+  margin-left: 60px !important;
+}
+.arrClassModal .modalCon .line2 {
+  width: 453px;
+  display: flex;
+  justify-content: space-between;
+}
+.arrClassModal .modalCon .line2 .ivu-form-item-label {
+  width: 90px !important;
+}
+.arrClassModal .modalCon .line2 .ivu-form-item-content {
+  margin-left: 90px !important;
+}
+.arrClassModal .modalCon .line3 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.arrClassModal .modalCon .line3 .label_grade .ivu-form-item-label {
+  width: 54px !important;
+}
+.arrClassModal .modalCon .line3 .label_grade .ivu-form-item-content {
+  margin-left: 60px !important;
+}
+.arrClassModal .modalCon textarea.ivu-input {
+  background-color: #f7fafc;
+  border: none;
+}
+.arrClassModal .modalCon .submit {
+  width: 70px;
+  height: 28px;
+  background: #07C4FE;
+  border-radius: 14px;
+  text-align: center;
+  padding: 0;
+  color: #ffffff;
+  border: none;
+  margin-left: 500px;
+  outline: none;
+  cursor: pointer;
+}
+.arrClassModal .modalCon .submit:hover {
+  background: #50d6ff;
+}
+.placeOrderModal .modalCon {
+  padding: 36px 20px 20px 30px;
+  display: flex;
+}
+.placeOrderModal .modalCon .left {
+  width: 550px;
+  position: relative;
+}
+.placeOrderModal .modalCon .left .modalTitle {
+  color: #656e7d;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 28px;
+}
+.placeOrderModal .modalCon .left .orderAmount {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  font-size: 12px;
+}
+.placeOrderModal .modalCon .left .orderAmount span:first-child {
+  color: #656e7d;
+  margin-right: 5px;
+  margin-left: 0;
+  vertical-align: 0.5px;
+}
+.placeOrderModal .modalCon .left .orderAmount span:first-child i {
+  font-size: 16px;
+  color: #ff7a5e;
+  margin-left: 8px;
+  vertical-align: -1px;
+}
+.placeOrderModal .modalCon .left .orderAmount span {
+  color: #ffbc3b;
+  margin-left: 14px;
+}
+.placeOrderModal .modalCon .left .orderAmount span i {
+  margin-left: 4px;
+}
+.placeOrderModal .modalCon .left .ivu-form-item {
+  margin-bottom: 20px;
+}
+.placeOrderModal .modalCon .left .ivu-form .ivu-form-item-label {
+  padding: 0;
+  line-height: 32px;
+}
+.placeOrderModal .modalCon .left .ivu-form .ivu-form-item-label {
+  color: #c9ced6;
+}
+.placeOrderModal .modalCon .left .ivu-select-single .ivu-select-selection {
+  height: 28px;
+  border: none;
+  background-color: #f5f6f8;
+  border-radius: 14px;
+}
+.placeOrderModal .modalCon .left .ivu-form-item-content {
+  color: #656e7d;
+}
+.placeOrderModal .modalCon .left .ivu-input {
+  background-color: #f5f6f8;
+  border: none;
+  border-radius: 14px;
+  text-align: center;
+  height: 28px;
+}
+.placeOrderModal .modalCon .left .ivu-select-visible .ivu-select-selection {
+  box-shadow: none;
+}
+.placeOrderModal .modalCon .left .ivu-input:focus {
+  box-shadow: none;
+}
+.placeOrderModal .modalCon .left textarea.ivu-input {
+  text-align: left;
+}
+.placeOrderModal .modalCon .left .chooseDate .ivu-input {
+  border: none;
+  background-color: #f5f6f8;
+  height: 28px;
+  border-radius: 14px;
+}
+.placeOrderModal .modalCon .left .chooseDate .ivu-input-icon {
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+}
+.placeOrderModal .modalCon .left .ivu-input:focus {
+  box-shadow: none;
+}
+.placeOrderModal .modalCon .left textarea.ivu-input {
+  background-color: #f7fafc;
+  border: none;
+}
+.placeOrderModal .modalCon .left .line1 {
+  width: 536px;
+  display: flex;
+}
+.placeOrderModal .modalCon .left .line1 .ivu-form-item-label {
+  width: 100px !important;
+}
+.placeOrderModal .modalCon .left .line1 .ivu-form-item-content {
+  margin-left: 100px !important;
+}
+.placeOrderModal .modalCon .left .line1 .ivu-form-item {
+  margin-left: 34px;
+}
+.placeOrderModal .modalCon .left .line1 .ivu-form-item:first-child {
+  margin-left: 0;
+}
+.placeOrderModal .modalCon .left .line1 .ivu-form-item:first-child .ivu-form-item-label {
+  width: 50px !important;
+}
+.placeOrderModal .modalCon .left .line1 .ivu-form-item:first-child .ivu-form-item-content {
+  margin-left: 50px !important;
+}
+.placeOrderModal .modalCon .left .line2 {
+  width: 536px;
+  display: flex;
+}
+.placeOrderModal .modalCon .left .line2 .ivu-form-item {
+  margin-left: 34px;
+}
+.placeOrderModal .modalCon .left .line2 .ivu-form-item:first-child {
+  margin-left: 0;
+}
+.placeOrderModal .modalCon .left .line3 {
+  width: 530px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.placeOrderModal .modalCon .left .line3 .ivu-form-item:nth-child(2n) {
+  margin-left: 23px;
+}
+.placeOrderModal .modalCon .left .line3 .addDiscount {
+  height: 32px;
+  line-height: 32px;
+  color: #07C4FE;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.placeOrderModal .modalCon .left .line4 {
+  width: 560px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.placeOrderModal .modalCon .left .line4 .ivu-form-item {
+  width: 220px;
+}
+.placeOrderModal .modalCon .left .line4 .ivu-form-item .ivu-form-item-content {
+  margin-left: 0 !important;
+}
+.placeOrderModal .modalCon .left .line4 .addDiscount {
+  height: 32px;
+  line-height: 32px;
+  color: #07C4FE;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.placeOrderModal .modalCon .left .line5 {
+  width: 516px;
+  display: flex;
+}
+.placeOrderModal .modalCon .left .line5 .ivu-form-item {
+  margin-left: 34px;
+}
+.placeOrderModal .modalCon .left .line5 .ivu-form-item:first-child {
+  margin-left: 0;
+}
+.placeOrderModal .modalCon .left .line5 .ivu-form-item-content {
+  min-width: 90px;
+}
+.placeOrderModal .modalCon .left .line5 .ivu-form-item:nth-child(2n) {
+  margin-left: 34px;
+}
+.placeOrderModal .modalCon .left .line5 .ivu-form-item:nth-child(2n) .ivu-form-item-label {
+  width: 120px !important;
+}
+.placeOrderModal .modalCon .left .line5 .ivu-form-item:nth-child(2n) .ivu-form-item-content {
+  margin-left: 120px !important;
+  min-width: 200px;
+}
+.placeOrderModal .modalCon .left .btnWrap {
+  text-align: right;
+}
+.placeOrderModal .modalCon .left .btnWrap .submit {
+  width: 90px;
+  height: 28px;
+  background: #07C4FE;
+  border-radius: 14px;
+  text-align: center;
+  margin-right: 30px;
+  padding: 0;
+  color: #ffffff;
+  border: none;
+  margin-top: 20px;
+  outline: none;
+  cursor: pointer;
+}
+.placeOrderModal .modalCon .left .btnWrap .submit:hover {
+  background: #50d6ff;
+}
+.placeOrderModal .modalCon .right {
+  margin-left: 9px;
+  display: flex;
+}
+.placeOrderModal .modalCon .right .filesShow {
+  text-align: center;
+  color: #07C4FE;
+  width: 11px;
+  line-height: 13px;
+  margin-top: 200px;
+}
+.placeOrderModal .modalCon .right .filesShow span {
+  cursor: pointer;
+}
+.placeOrderModal .modalCon .right .filesShow span i {
+  margin-top: 10px;
+  display: inline-block;
+}
+.placeOrderModal .modalCon .right .priceDetails {
+  width: 180px;
+  margin-left: 20px;
+  position: relative;
+}
+.placeOrderModal .modalCon .right .priceDetails .priceHead {
+  margin-bottom: 10px;
+}
+.placeOrderModal .modalCon .right .priceDetails .priceHead .priceTitle {
+  font-size: 16px;
+  color: #656e7d;
+}
+.placeOrderModal .modalCon .right .priceDetails .priceHead .priceTip {
+  color: #ffbc3b;
+  font-size: 12px;
+  margin-top: 2px;
+}
+.placeOrderModal .modalCon .right .priceDetails .priceBody {
+  border-bottom: 1px solid #cacfda;
+  padding-bottom: 20px;
+}
+.placeOrderModal .modalCon .right .priceDetails .priceBody li {
+  margin-bottom: 10px;
+}
+.placeOrderModal .modalCon .right .priceDetails .priceBody li div.activity {
+  display: flex;
+  justify-content: space-between;
+  line-height: 24px;
+  font-size: 12px;
+}
+.placeOrderModal .modalCon .right .priceDetails .priceBody li div.activity p:first-child {
+  color: #656e7d;
+}
+.placeOrderModal .modalCon .right .priceDetails .priceBody li div.activity p:first-child span {
+  color: #ff7a5e;
+  vertical-align: -3px;
+  margin-right: 1px;
+}
+.placeOrderModal .modalCon .right .priceDetails .priceBody li div.activity p:nth-child(2) {
+  color: #abb2bf;
+}
+.placeOrderModal .modalCon .right .priceDetails .priceBody li div.activity p.coupon {
+  color: #ffbc3b;
+}
+.placeOrderModal .modalCon .right .priceDetails .priceBody li > p {
+  font-size: 12px;
+  color: #abb2bf;
+}
+.placeOrderModal .modalCon .right .priceDetails .priceBody li > p span {
+  display: block;
+}
+.placeOrderModal .modalCon .right .priceDetails .priceBody2 {
+  margin-top: 12px;
+}
+.placeOrderModal .modalCon .right .priceDetails .priceBody2 li {
+  display: flex;
+  justify-content: space-between;
+  line-height: 30px;
+  font-size: 12px;
+}
+.placeOrderModal .modalCon .right .priceDetails .priceBody2 li p:first-child {
+  color: #656e7d;
+}
+.placeOrderModal .modalCon .right .priceDetails .priceBody2 li p:nth-child(2) {
+  color: #ff7a5e;
+}
+.placeOrderModal .modalCon .right .priceDetails .priceBody2 li.fracture p {
+  color: #ffbc3b;
+}
+.placeOrderModal .modalCon .right .priceDetails .priceBody2 li.fracture p span {
+  color: #656e7d;
+}
+.placeOrderModal .modalCon .right .priceDetails .priceFoot {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 180px;
+  color: #c9ced6;
+}
+.placeOrderModal .modalCon .right .priceDetails .priceFoot p.closingDate {
+  margin-bottom: 8px;
+}
+.placeOrderModal .modalCon .right .priceDetails .priceFoot p.closingDate i {
+  vertical-align: -1.5px;
+  margin-right: 6px;
+}
+.placeOrderModal .modalCon .right .priceDetails .priceFoot ul li {
+  display: flex;
+  justify-content: space-between;
+  line-height: 30px;
+  font-size: 12px;
+}

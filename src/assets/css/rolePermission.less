@@ -1,0 +1,166 @@
+.rolePermissionBody{
+  .rolePermissionLeft{
+    /*width: 180px;*/
+    .rolePermissionLeftMenu{
+      width: 100%!important;
+      padding-bottom: 15px;
+      .addRole{
+        font-size: 16px;
+        font-weight: 600;
+        text-align: left;
+        position: relative;
+        padding: 15px;
+        letter-spacing: 1px;
+        cursor: pointer;
+        color: #656E7D;
+        .addRoleIcon{
+          position: absolute;
+          right: 12px;
+          color: #07C4FE;
+          font-weight: 600;
+          top:17px;
+          cursor: pointer;
+          font-size: 18px;
+        }
+      }
+      li{
+        text-align: left;
+        padding: 16px;
+        color: #6897C0;
+        font-size: 14px;
+      }
+      .ivu-menu-item-active{
+        color: #6897C0;
+        background: #E7F8FF;
+      }
+    }
+  }
+  .menuPermission{
+    &:last-child{
+      padding-bottom: 30px;
+    }
+    background: #fff;
+    padding: 30px 22px 0px;
+    .menuTitle{
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  }
+  .rolePermissionRight{
+    .rolePermissionRightInner{
+      padding-left: 10px;
+      .rolePermissionRightBody{
+        .tabs {
+          overflow: visible;
+          .rolePermissionRightContent{
+            background: #fff;
+            padding: 30px 22px;
+            display: flex;
+            flex-wrap: wrap;
+            .rolePermissionRightList{
+              .ivu-checkbox-indeterminate{
+                .ivu-checkbox-inner{
+                  background-color: #fff;
+                  border-color: #dcdee2;
+                }
+              }
+              .ivu-radio-wrapper{
+                margin-right: 30px;
+              }
+            }
+            .bzdList{
+              //float: left;
+              width: 372px;
+              margin-right: 40px;
+              .bzdListTop{
+                padding-bottom: 10px;
+                .bzdListTitle{
+
+                }
+                .bzdListCheckWrap{
+                  float: right;
+                  .bzdListCheck{
+                    color: #07C4FE;
+                    width: 92px;
+                    text-align: center;
+                  }
+                  .bzdListCheck1{
+                    //margin-right: 30px;
+                  }
+                }
+              }
+              .bzdListContent{
+                .bzdListTable{
+                  tr{
+                    height: 60px;
+                    //color: #656E7D;
+                    th{
+                      background: #E7F8FF;
+                      color: #656E7D;
+                    }
+                  }
+                  .ivu-table-body{
+                    color: #656E7D;
+                  }
+                }
+              }
+            }
+          }
+          .ivu-tabs-bar .ivu-tabs-nav-container {
+            height: 40px;
+          }
+          .ivu-tabs-bar {
+            border: none;
+          }
+          .ivu-tabs-bar .ivu-tabs-tab {
+            margin-right: 0;
+            height: 40px;
+            width: 68px;
+            text-align: center;
+            border: none;
+          }
+          .ivu-tabs-nav .ivu-tabs-tab:hover {
+            color: @primary-hover;
+          }
+          .ivu-tabs-content {
+            margin-top: -16px;
+          }
+          .ivu-tabs-bar .ivu-tabs-tab-active {
+            border-top: none;
+          }
+          .ivu-tabs-bar .ivu-tabs-tab {
+            transition: none;
+            background: none;
+            padding: 10px 16px 4px;
+          }
+          .ivu-tabs-nav .ivu-tabs-tab {
+            box-sizing: content-box;
+            transition: none;
+          }
+          .ivu-tabs-tabpane {
+            background-color: @white-color;
+            //min-height: 100px;
+          }
+          .ivu-tabs-nav .ivu-tabs-tab-active {
+            color: @primary-color;
+            background: @white-color;
+          }
+          .ivu-tabs-bar .ivu-tabs-tab-active:before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: @primary-color;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+          .ivu-checkbox-indeterminate .ivu-checkbox-inner {
+            background-color: @primary-color;
+            border-color: @primary-color;
+          }
+        }
+      }
+    }
+  }
+}

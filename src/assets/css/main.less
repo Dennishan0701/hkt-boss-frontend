@@ -1,0 +1,1532 @@
+@import "vividStandard.less";
+@import "iconfont/iconfont.css";
+@import "rolePermission.less";
+
+//样式初始化
+img {
+  max-width: 100%;
+  border: 0;
+}
+
+body a {
+  color: inherit;
+}
+
+em, i {
+  font-style: normal;
+}
+
+b, strong, h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+li {
+  list-style: none;
+}
+
+/**
+快速布局
+**/
+
+.ml-15 {
+  margin-left: 15px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mt-20 {
+  margin-top: 20px !important;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.ml-20 {
+  margin-left: 20px;
+}
+
+.ml-30 {
+  margin-left: 30px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.mr-15 {
+  margin-right: 15px;
+}
+
+.mr-20 {
+  margin-right: 20px;
+}
+
+.mv-20 {
+  margin: 20px 0;
+}
+
+.pt-10 {
+  padding-top: 10px;
+}
+
+.pt-20 {
+  padding-top: 20px;
+}
+
+.pl-20 {
+  padding-left: 20px;
+}
+
+.pd-20 {
+  padding: 20px;
+}
+
+.f {
+  display: flex;
+}
+
+.f-j-fe {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.list-inline {
+  & > li {
+    display: inline-block;
+  }
+}
+
+.gutter-20 {
+  li {
+    margin-right: 20px;
+  }
+}
+
+.clear:after {
+  content: '';
+  overflow: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+//清除浮动
+.clearfix:after {
+  clear: both;
+  content: ' ';
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+//后台设置页面下
+#setting {
+  .wrapper-content, .wrapper-main {
+    background: @background-color3;
+  }
+  .menu-top .menuTopL .notice {
+    color: @dark-gray-color;
+    &:hover {
+      color: @dark-gray-hover;
+    }
+  }
+  .menu-top .menuTopR .setting a:hover, .menu-top .menuTopR .signOut:hover {
+    color: @dark-gray-hover;
+  }
+  .menu-top {
+    background: @background-color3 url(../image/bgTop2.png) no-repeat top right;
+  }
+  .menu-slide {
+    background: @background-color3 url(../image/bgLeft2.png) no-repeat 0 292px;
+  }
+  //.menu-slide .ivu-menu-vertical .ivu-menu-opened {
+  //  background: @background-color;
+  //}
+  .menu-slide .ivu-menu {
+    //background-color: @background-color3;
+    color: @dark-gray-color;
+    &:hover {
+      color: @dark-gray-hover;
+    }
+  }
+  .menu-slide .ivu-menu .ivu-menu-item-active .ivu-menu-submenu-title {
+    color: @dark-gray-color;
+  }
+  .menu-slide .ivu-menu-submenu.ivu-menu-opened .ivu-menu {
+    background-color: @auxiliary-color5;
+    color: @auxiliary-color6;
+  }
+
+  //.menu-slide .ivu-menu-vertical .ivu-menu-opened .ivu-menu-submenu-title {
+  //  background: @primary-color;
+  //  color: #FFF;
+  //}
+  .menu-slide .ivu-menu-vertical .ivu-menu-item:hover {
+    color: @auxiliary-color6-hover;
+  }
+  .ivu-menu-vertical .ivu-menu-submenu-title:hover {
+    color: @dark-gray-hover;
+  }
+  .menu-slide .ivu-menu-vertical .ivu-menu-opened .ivu-menu-submenu-title {
+    color: @dark-gray-color;
+    background-color: @background-color4;
+    &:hover {
+      color: @dark-gray-hover;
+    }
+  }
+  .menu-slide .ivu-menu .ivu-menu-item.ivu-menu-item-active {
+    background: none;
+    color: @background-color4;
+  }
+  .menu-slide .ivu-menu .ivu-menu-item.ivu-menu-item-active:after,
+  .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu):after {
+    background: none;
+  }
+}
+
+.wrapper-main {
+  //height: 100vh;
+  //padding-bottom: 15px;
+  padding: 40px 30px 20px 180px;
+  position: absolute;
+  width: 100%;
+  transition: all 368ms;
+  //background-color: @background-color;
+  background: linear-gradient(0deg, rgba(50, 168, 204, 1) 0%, rgba(65, 116, 192, 1) 99%);
+  height: 100%;
+  /*滚动条样式*/
+  ::-webkit-scrollbar { /*滚动条整体样式*/
+    width: 10px; /*高宽分别对应横竖滚动条的尺寸*/
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+    border-radius: 3px;
+    background: #99cbe2;
+  }
+
+  ::-webkit-scrollbar-track { /*滚动条里面轨道*/
+    border-radius: 0;
+    //background: #f0f1f3;
+    background: #e3e3e3;
+  }
+}
+
+//中间切换（页面）样式
+.layout-content {
+  width: 100%;
+  height: 100%;
+  background-color: @background-color2;
+  //padding: 20px;
+  padding: 10px 20px 20px;
+  overflow-y: scroll;
+  //position: relative;
+  .breadcrumb {
+    margin-bottom: 10px;
+    line-height: 14px;
+    font-size: 12px;
+    color: @dark-gray-color;
+    position: relative;
+    a:hover {
+      color: @dark-gray-hover;
+    }
+    .ivu-breadcrumb {
+      font-size: 12px;
+      & > span:last-child {
+        font-weight: normal;
+        color: @mid-gray-color;
+      }
+    }
+    .rightActions {
+      position: absolute;
+      min-width: 90px;
+      height: 28px;
+      padding: 0 10px;
+      background: @primary-color;
+      border-radius: 14px;
+      text-align: center;
+      //padding: 0;
+      color: @white-color;
+      border: none;
+      //margin-left: 260px;
+      outline: none;
+      cursor: pointer;
+      line-height: 28px;
+      top: -8px;
+      right: 0px;
+      &:hover {
+        background: @primary-hover;
+      }
+    }
+    .rightActions2 {
+      right: 110px;
+    }
+    .leadsUpload {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+  .setScreensBody {
+    .tabs {
+      width: calc(100% - 180px);
+    }
+  }
+  .trial { //客户试听下面排课申请记录样式突出
+    .tabs {
+      .ivu-tabs-nav {
+        //.ivu-tabs-tab:nth-child(5) { //课程计划样式
+        //  color: @tips-color;
+        //}
+        //.ivu-tabs-tab:nth-child(5).ivu-tabs-tab-active:before {
+        //  background: @tips-color;
+        //}
+        .ivu-tabs-tab:nth-child(7) { //排课记录样式
+          color: @tips-color;
+        }
+        .ivu-tabs-tab:nth-child(7).ivu-tabs-tab-active:before {
+          background: @tips-color;
+        }
+      }
+    }
+  }
+  .student { //学生-在读
+    .tabs {
+      .ivu-tabs-nav {
+        .ivu-tabs-tab:nth-child(5) {
+          color: @tips-color;
+        }
+        .ivu-tabs-tab:nth-child(5).ivu-tabs-tab-active:before {
+          background: @tips-color;
+        }
+        .ivu-tabs-tab:nth-child(6) {
+          color: @tips-color;
+        }
+        .ivu-tabs-tab:nth-child(6).ivu-tabs-tab-active:before {
+          background: @tips-color;
+        }
+        .ivu-tabs-tab:nth-child(7) {
+          color: @tips-color;
+        }
+        .ivu-tabs-tab:nth-child(7).ivu-tabs-tab-active:before {
+          background: @tips-color;
+        }
+      }
+    }
+  }
+  .refund { //学生-退费
+    .tabs {
+      .ivu-tabs-nav {
+        .ivu-tabs-tab:nth-child(3) {
+          color: @tips-color;
+        }
+        .ivu-tabs-tab:nth-child(3).ivu-tabs-tab-active:before {
+          background: @tips-color;
+        }
+      }
+    }
+  }
+  .cc_management, .tmkManagement { //团队-cc管理
+    .tabs {
+      .ivu-tabs-nav {
+        .ivu-tabs-tab:nth-child(5) {
+          color: @tips-color;
+        }
+        .ivu-tabs-tab:nth-child(5).ivu-tabs-tab-active:before {
+          background: @tips-color;
+        }
+        .ivu-tabs-tab:nth-child(4) {
+          color: @tips-color;
+        }
+        .ivu-tabs-tab:nth-child(4).ivu-tabs-tab-active:before {
+          background: @tips-color;
+        }
+        .ivu-tabs-tab:nth-child(3) {
+          color: @tips-color;
+        }
+        .ivu-tabs-tab:nth-child(3).ivu-tabs-tab-active:before {
+          background: @tips-color;
+        }
+      }
+    }
+  }
+  .payment, .classEach, .classHour { //结算-流水/课次、课时
+    .tabs {
+      .ivu-tabs-nav {
+        .ivu-tabs-tab:nth-child(2) {
+          color: @tips-color;
+        }
+        .ivu-tabs-tab:nth-child(2).ivu-tabs-tab-active:before {
+          background: @tips-color;
+        }
+      }
+    }
+  }
+  .marketALL { //市场下面重复名单样式突出
+    .tabs {
+      .ivu-tabs-nav {
+        .ivu-tabs-tab:nth-child(3) { //重复名单样式
+          color: @tips-color;
+        }
+        .ivu-tabs-tab:nth-child(3).ivu-tabs-tab-active:before {
+          background: @tips-color;
+        }
+        .ivu-tabs-tab:nth-child(4) { //重复名单样式
+          color: @tips-color;
+        }
+        .ivu-tabs-tab:nth-child(4).ivu-tabs-tab-active:before {
+          background: @tips-color;
+        }
+      }
+    }
+  }
+  .tabs {
+    overflow: visible;
+    .ivu-tabs-bar .ivu-tabs-nav-container {
+      height: 32px;
+    }
+    .ivu-tabs-bar {
+      border: none;
+    }
+    .ivu-tabs-bar .ivu-tabs-tab {
+      margin-right: 0;
+      height: 40px;
+      //width: 68px;
+      min-width: 68px;
+      text-align: center;
+      border: none;
+    }
+    .ivu-tabs-nav .ivu-tabs-tab:hover {
+      color: @primary-hover;
+    }
+    .ivu-tabs-content {
+      margin-top: -16px;
+    }
+    .ivu-tabs-bar .ivu-tabs-tab-active {
+      border-top: none;
+    }
+    .ivu-tabs-bar .ivu-tabs-tab {
+      transition: none;
+      background: none;
+      padding: 6px 11px 4px;
+      //padding: 10px 16px 4px;
+    }
+    .ivu-tabs-nav .ivu-tabs-tab {
+      box-sizing: content-box;
+      transition: none;
+    }
+    .ivu-tabs-tabpane {
+      background-color: @white-color;
+      //min-height: 100px;
+    }
+    .ivu-tabs-nav .ivu-tabs-tab-active {
+      color: @primary-color;
+      background: @white-color;
+    }
+    .ivu-tabs-bar .ivu-tabs-tab-active:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: @primary-color;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .ivu-checkbox-indeterminate .ivu-checkbox-inner {
+      background-color: @primary-color;
+      border-color: @primary-color;
+    }
+
+  }
+  .ivu-checkbox-indeterminate .ivu-checkbox-inner {
+    background-color: @primary-color;
+    border-color: @primary-color;
+  }
+  .ivu-select-item-selected, .ivu-select-item-selected:hover {
+    color: @primary-color;
+  }
+  .checkBoxList li {
+    display: inline-block;
+    margin: 2px 5px;
+    padding: 0 8px;
+    font-size: 13px;
+    cursor: pointer;
+    height: 28px;
+    line-height: 28px;
+    //height: 32px;
+    //line-height: 32px;
+    &.active {
+      background-color: @primary-color;
+      color: @white-color;
+    }
+  }
+  .setFilter {
+    position: relative;
+    padding-bottom: 20px;
+    background-color: #fff;
+    .setScreens {
+      position: absolute;
+      //top: -30px;
+      top: -26px;
+      right: 0px;
+      z-index: 3;
+      .setBtn {
+        cursor: pointer;
+        font-size: 12px;
+        color: @primary-color;
+        line-height: 20px;
+        &:hover {
+          color: @primary-hover;
+        }
+        i {
+          font-size: 18px;
+          margin-right: 10px;
+          vertical-align: -2px;
+        }
+      }
+      .adminSetBtn {
+        color: @tips-color;
+        &:hover {
+          color: @tips-hover;
+        }
+      }
+
+      .clickBtn {
+        margin-top: 20px;
+        text-align: center;
+        button {
+          width: 90px;
+          height: 36px;
+          border-radius: 18px;
+        }
+        .ivu-btn:focus {
+          box-shadow: none;
+        }
+        .cancle {
+          margin-right: 15px;
+          background-color: @auxiliary-color2;
+          &:hover {
+            color: @primary-color;
+            border-color: @primary-color;
+          }
+        }
+        .confirm {
+          background-color: @primary-color;
+          border-color: @primary-color;
+          &:hover {
+            background-color: @primary-hover;
+            border-color: @primary-hover;
+          }
+        }
+      }
+    }
+    .allScreens {
+      position: relative;
+      &.hidden {
+        //height: 100px;
+        //overflow: hidden;
+        animation: fold 0.2s;
+        animation-fill-mode: forwards;
+        .fold i {
+          //transform:rotate(180deg);
+          //color:red;
+          animation: fold2 0.2s;
+          animation-fill-mode: forwards; //动画地从一个地方移动到另一个地方，并让它停留在那里：
+        }
+
+      }
+      @keyframes fold {
+        0% {
+          height: auto;
+        }
+        100% {
+          //height: 320px;
+          height: 290px;
+          overflow: hidden;
+        }
+      }
+      @keyframes fold2 {
+        0% {
+        }
+        100% {
+          transform: rotate(-180deg);
+        }
+      }
+      background-color: @white-color;
+      padding: 30px 20px 6px;
+      .fold {
+        position: absolute;
+        width: 84px;
+        height: 50px;
+        line-height: 50px;
+        left: 50%;
+        bottom: -14px;
+        text-align: center;
+        margin-left: -42px;
+        padding-top: 4px;
+        span {
+          cursor: pointer;
+          font-size: 14px;
+          color: @primary-color;
+          i {
+            font-size: 20px;
+            margin-left: 4px;
+          }
+        }
+      }
+      .ivu-form-item {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .chooseScreens {
+    padding-bottom: 18px;
+    position: relative;
+    overflow: hidden;
+    .chooseTip {
+      font-size: 12px;
+      line-height: 30px;
+      color: @tips-color;
+      margin-bottom: 10px;
+    }
+    .clickBtns {
+      margin-top: 30px !important;
+      text-align: right !important;
+      margin-right: 92.5px;
+    }
+    .filterSetting {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 3px;
+      .fL {
+        width: 340px;
+        position: relative;
+        .chooseTip {
+          margin-bottom: 16px;
+        }
+        //.ivu-checkbox-group {
+        //  padding: 20px;
+        //}
+      }
+      .fR {
+        width: 380px;
+        position: relative;
+        margin-left: 20px;
+        display: flex;
+        min-height: 200px;
+        flex-direction: column;
+        .chooseTip {
+          margin-bottom: 0;
+        }
+        .fRTop {
+          width: 100%;
+          height: 30px;
+        }
+        .ivu-checkbox-group {
+          flex: 5;
+          background-color: @tableBgColor1;
+          padding: 15px 20px;
+          border: 1px solid @light-gray-hover;
+          //min-height:220px ;
+        }
+      }
+    }
+    .checkALL {
+      position: absolute;
+      top: 6px;
+      right: -62px;
+    }
+    .ivu-checkbox-group {
+      white-space: pre-wrap; //换行
+    }
+    .ivu-checkbox-wrapper {
+      width: 95px;
+      margin-right: 16px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .ivu-checkbox-wrapper:nth-child(3n) {
+      margin-right: 0px;
+    }
+    .ivu-checkbox + span {
+      margin-left: 8px;
+    }
+  }
+  .tableContent {
+    margin-top: 10px;
+    padding: 0 20px 40px;
+    background-color: @white-color;
+    .tableSetting {
+      //line-height: 80px;
+      padding: 0 0px 0 18px;
+      display: flex;
+      justify-content: space-between;
+      .dataOperate {
+        display: flex;
+        //margin: 22px 0;
+        /*float:left;*/
+        padding: 4px 0 26px;
+        p:first-child {
+          //line-height: 80px;
+          margin-top: 28px;
+        }
+        p {
+          color: @btn-disable-color;
+          span.num {
+            margin: 0 3px;
+            display: inline-block;
+            width: 14px;
+            text-align: center;
+          }
+          //span.payMoneyTotal {
+          //  padding-top: 28px;
+          //  color: @error-color;
+          //  display: block;
+          //}
+        }
+        button {
+          height: 28px;
+          //width: 70px;
+          border-radius: 14px;
+          text-align: center;
+          padding: 0 8px;
+          margin-left: 10px;
+          color: @primary-color;
+          border: 1px solid @primary-color;
+          background-color: @btn-bg-color;
+          margin-top: 22px;
+          min-width: 66px;
+          &:hover {
+            color: @primary-hover;
+            border: 1px solid @primary-hover;
+          }
+          //margin-top: 20px;
+        }
+        .ivu-btn:focus {
+          box-shadow: none;
+        }
+        button.btn2 {
+          color: @tips-color;
+          border: 1px solid @tips-color;
+          background-color: @btn-bg2-color;
+          &:hover {
+            color: @tips-hover;
+            border: 1px solid @tips-hover;
+          }
+        }
+        button.btn3 {
+          color: @error-color;
+          border: 1px solid @error-color;
+          background-color: @btn-bg3-color;
+          &:hover {
+            color: @error-hover;
+            border: 1px solid @error-hover;
+          }
+        }
+        button.btn4 {
+          color: @error-color;
+          border: 1px solid @error-color;
+          background-color: @btn-bg3-color;
+          &:hover {
+            color: @error-hover;
+            border: 1px solid @error-hover;
+          }
+        }
+      }
+      .sortTables {
+        display: flex;
+        /*padding-top: 25px;*/
+        p {
+
+        }
+        /*float:right;*/
+        .ivu-select, .ivu-input-wrapper {
+          //margin-top: 22px;
+          margin: 22px 0;
+        }
+        .ivu-select-selection {
+          background-color: @auxiliary-color4;
+          border: none;
+          border-radius: 0px;
+          padding-left: 20px;
+        }
+        .select1 .ivu-select-selection {
+          border-top-left-radius: 16px;
+          border-bottom-left-radius: 16px;
+        }
+        .ivu-input {
+          background-color: @auxiliary-color4;
+          border: none;
+          border-radius: 0px;
+          border-top-right-radius: 16px;
+          border-bottom-right-radius: 16px;
+          text-align: center;
+          height: 36px;
+        }
+        .ivu-select-visible .ivu-select-selection {
+          box-shadow: none;
+        }
+        .ivu-input:focus {
+          box-shadow: none;
+        }
+        .ivu-select-single .ivu-select-selection {
+          height: 36px;
+        }
+        .ivu-select-single .ivu-select-selection .ivu-select-placeholder, .ivu-select-single .ivu-select-selection .ivu-select-selected-value {
+          height: 36px;
+          line-height: 36px;
+        }
+      }
+      .sortData {
+        position: relative;
+        .emptyData {
+          position: absolute;
+          top: 22px;
+          right: 0px;
+          cursor: pointer;
+          color: @mid-gray-color;
+          font-size: 14px;
+          width: 30px;
+          height: 36px;
+          line-height: 36px;
+          text-align: center;
+          //background-color: red;
+          border-bottom-right-radius: 18px;
+          border-top-right-radius: 18px;
+          &:hover {
+            color: @mid-gray-hover;
+          }
+        }
+      }
+      button.btnSearch {
+        height: 36px;
+        line-height: 36px;
+        width: 36px;
+        border-radius: 18px;
+        text-align: center;
+        padding: 0;
+        margin: 22px 20px 0 20px;
+        color: @white-color;
+        border: none;
+        background-color: @primary-color;
+        font-size: 14px;
+        & > span {
+          vertical-align: 0;
+        }
+        &:hover {
+          background-color: @primary-hover;
+        }
+        &:focus {
+          box-shadow: none;
+        }
+        i {
+          //margin-right: 10px;
+          vertical-align: -1px;
+        }
+        //margin-top: 20px;
+      }
+      .setTables {
+        //width: 80px;
+        line-height: 80px;
+        display: inline-block;
+        .setBtn {
+          cursor: pointer;
+          font-size: 12px;
+          color: @primary-color;
+          line-height: 20px;
+          &:hover {
+            color: @primary-hover;
+          }
+          i {
+            font-size: 18px;
+            margin-right: 10px;
+            vertical-align: -2px;
+          }
+        }
+        .adminSetBtn {
+          color: @tips-color;
+          &:hover {
+            color: @tips-hover;
+          }
+        }
+        //.chooseScreens {
+        //  padding-bottom: 18px;
+        //  .chooseTip {
+        //    font-size: 12px;
+        //    line-height: 30px;
+        //    color: @tips-color;
+        //    margin-bottom: 10px;
+        //  }
+        //  .ivu-checkbox-group {
+        //    white-space: pre-wrap; //换行
+        //  }
+        //  .ivu-checkbox-wrapper {
+        //    width: 95px;
+        //    margin-right: 16px;
+        //    overflow: hidden;
+        //    text-overflow: ellipsis;
+        //    white-space: nowrap;
+        //  }
+        //  .ivu-checkbox-wrapper:nth-child(3n) {
+        //    margin-right: 0px;
+        //  }
+        //  .ivu-checkbox + span {
+        //    margin-left: 8px;
+        //  }
+        //}
+        .clickBtn {
+          margin-top: 20px;
+          text-align: center;
+          button {
+            width: 90px;
+            height: 36px;
+            border-radius: 18px;
+          }
+          .ivu-btn:focus {
+            box-shadow: none;
+          }
+          .cancle {
+            margin-right: 15px;
+            background-color: @auxiliary-color2;
+            &:hover {
+              color: @primary-color;
+              border-color: @primary-color;
+            }
+          }
+          .confirm {
+            background-color: @primary-color;
+            border-color: @primary-color;
+            &:hover {
+              background-color: @primary-hover;
+              border-color: @primary-hover;
+            }
+          }
+        }
+      }
+    }
+
+    .ivu-table-wrapper {
+      border: none;
+    }
+    .tableData {
+      //margin-bottom: 20px;
+      .ivu-table table {
+        width: 100% !important;
+        //overflow-x: scroll;
+
+      }
+      .ivu-table-header {
+        background-color: @class-blue;
+        border-bottom: 1px solid @light-gray-hover;
+      }
+      .ivu-table-fixed-header {
+        background-color: @class-blue;
+        border-top: 1px solid @light-gray-hover;
+        border-bottom: 1px solid @light-gray-hover;
+      }
+      .ivu-table-fixed {
+        left: 1px;
+      }
+      .ivu-table-fixed-right::before, .ivu-table-fixed::before {
+        content: none;
+      }
+      .ivu-table {
+        border: 1px solid @light-gray-hover;
+      }
+      .ivu-table:before {
+        background-color: @light-gray-hover;
+      }
+      .ivu-table:after {
+        background-color: @light-gray-hover;
+      }
+      .ivu-table thead tr:first-child th {
+        height: 40px;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        color: @dark-gray-color;
+        //background-color: @class-blue;
+        //border-bottom: 1px solid @light-gray-hover;
+        //&:nth-child(3n-2) {
+        //  background: @classA-blue;
+        //  font-size: 16px;
+        //}
+        //
+        //&:nth-child(3n-1) {
+        //  background: @classA-yellow;
+        //  font-size: 16px;
+        //}
+        //
+        //&:nth-child(3n) {
+        //  background: @classA-violet;
+        //  font-size: 16px;
+        //}
+      }
+      //.ivu-table thead tr:not(:first-child) th {
+      //  line-height: 36px;
+      //  font-size: 14px;
+      //  font-weight: normal;
+      //  text-align: center;
+      //  color: @dark-gray-color;
+      //}
+      //
+      //.ivu-table thead tr:nth-child(2) th {
+      //  background: @classB-color;
+      //  font-size: 14px;
+      //}
+      //
+      //.ivu-table thead tr:nth-child(3) th {
+      //  background: @classC-color;
+      //  font-size: 14px;
+      //}
+      //.ivu-table thead tr:nth-child(4) th {
+      //  background: @classD-color;
+      //  font-size: 14px;
+      //}
+
+      .ivu-table tbody td {
+        /*padding: 6px 0 !important;*/
+        font-size: 12px;
+        text-align: center;
+        color: @dark-gray-color;
+      }
+      .ivu-table tbody tr:nth-child(2n-1) {
+        background-color: @tableBgColor1;
+      }
+      .ivu-table tbody tr:nth-child(2n) {
+        background-color: @tableBgColor2;
+      }
+      .ivu-table th {
+        //border: 1px solid #fff;
+        border: none;
+        height: 36px;
+        background: @class-blue;
+      }
+      .ivu-table td {
+        //border: 1px solid #fff;
+        border: none;
+        height: 36px;
+        background: none;
+      }
+    }
+  }
+  .ivu-input-icon {
+    z-index: 2;
+  }
+  .ivu-page {
+    text-align: center;
+    margin-top: 30px;
+    .ivu-select-single .ivu-select-selection,
+    .ivu-page-options-elevator input {
+      height: 28px;
+      line-height: 28px;
+    }
+    .ivu-page-item-jump-next, .ivu-page-item-jump-prev, .ivu-page-next, .ivu-page-prev, .ivu-page-item,
+    .ivu-select-single .ivu-select-selection .ivu-select-placeholder,
+    .ivu-select-single .ivu-select-selection .ivu-select-selected-value {
+      min-width: 28px;
+      height: 28px;
+      line-height: 28px;
+    }
+    .ivu-page-item:hover {
+      border-color: @primary-hover;
+      a {
+        color: @primary-hover;
+      }
+    }
+    .ivu-page-item-active {
+      border-color: @primary-color;
+      a {
+        color: @primary-color;
+      }
+    }
+    .ivu-page-next:hover, .ivu-page-prev:hover {
+      border-color: @primary-hover;
+      a {
+        color: @primary-hover;
+      }
+    }
+    .ivu-select-item-selected {
+      color: @primary-color;
+    }
+    .ivu-select-item-selected:hover {
+      color: @primary-hover;
+    }
+    .ivu-page-options-elevator input:focus {
+      color: @primary-color;
+      border-color: @primary-color;
+    }
+  }
+}
+
+/*表单*/
+.ivu-form .ivu-form-item-label {
+  font-size: 14px;
+  color: @mid-gray-color;
+}
+
+.ivu-btn-primary:focus, .ivu-btn:focus {
+  box-shadow: none;
+}
+
+.ivu-switch-checked {
+  border-color: @primary-color;
+  background-color: @primary-color;
+}
+
+.ivu-switch:focus {
+  box-shadow: none;
+}
+
+.ivu-radio-wrapper-checked, .ivu-checkbox-wrapper-checked {
+  color: @primary-color;
+}
+
+.ivu-date-picker-cells-focused em {
+  box-shadow: 0 0 0 1px @primary-color inset;
+}
+
+.ivu-date-picker-cells-cell-today em:after, .ivu-date-picker-cells-cell-selected em, .ivu-date-picker-cells-cell-selected:hover em {
+  background: @primary-color;
+}
+
+.ivu-radio-checked .ivu-radio-inner, .ivu-input:hover, .ivu-input:focus {
+  border-color: @primary-color;
+}
+
+.ivu-radio-inner:after {
+  background-color: @primary-color;
+}
+
+.ivu-radio-checked:hover .ivu-radio-inner, .ivu-date-picker-focused input {
+  border-color: @primary-color;
+}
+
+.ivu-select-visible .ivu-select-selection, .ivu-select-selection:hover, .ivu-select-selection-focused {
+  border-color: @primary-color;
+}
+
+.ivu-select-multiple .ivu-select-item-selected {
+  color: @primary-color;
+}
+
+.ivu-select-multiple .ivu-select-item-selected:after {
+  color: @primary-color;
+}
+
+.ivu-checkbox-checked .ivu-checkbox-inner {
+  border-color: @primary-color;
+  background-color: @primary-color;
+}
+
+.ivu-checkbox-checked:hover .ivu-checkbox-inner {
+  border-color: @primary-color;
+}
+
+.submit {
+  width: 120px;
+  height: 36px;
+  border-color: @primary-color;
+  background-color: @primary-color;
+  text-align: center;
+  color: @white-color;
+  font-size: 14px;
+  border-radius: 18px;
+}
+
+.ivu-btn-primary:hover {
+  color: #ffffff;
+  background-color: @primary-hover;
+  border-color: @primary-hover;
+}
+
+.has-header-content .wrapper-content {
+  padding: 80px 20px 0 276px;
+  background: #f1f1f1;
+  margin-top: 0;
+  height: 100%;
+}
+
+.wrapper-content.hide {
+  padding-left: 0;
+  transition-delay: 0ms;
+}
+
+.has-header-content .layout-content {
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .047);
+  padding: 5px 30px 15px 30px;
+}
+
+.wrapper-content .data-content {
+  margin-top: 30px;
+}
+
+.layout-content .content-header {
+  height: 56px;
+  z-index: 5;
+  width: 100%;
+  line-height: 56px;
+  overflow: hidden;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 35px;
+}
+
+.layout-content .content-header h1:first-child {
+  cursor: pointer;
+  color: #2d8cf0;
+}
+
+.layout-content .content-header h1 {
+  font-size: 14px;
+  float: left;
+  line-height: 56px;
+  font-weight: 400;
+}
+
+.layout-copy {
+  text-align: center;
+  padding: 10px 0 20px;
+  color: #9ea7b4;
+}
+
+/*Slide*/
+//menu-top start
+.menu-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background: @background-color;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  line-height: 40px;
+  background: @background-color url(../image/bgTop.png) no-repeat top right;
+  background-size: 380px 290px;
+  .menuTopL {
+    .crmLogo {
+      margin-top: 12px;
+      margin-left: 20px;
+    }
+    .notice {
+      margin-left: 33px;
+      color: @tips-color;
+      cursor: pointer;
+      vertical-align: 13px;
+      position: relative;
+      &:hover {
+        color: @tips-hover;
+      }
+      i {
+        margin-right: 10px;
+        vertical-align: -1px;
+      }
+    }
+  }
+  .menuTopR {
+    margin-right: 28px;
+    line-height: 40px;
+    display: flex;
+    .user {
+      //vertical-align: -4px;
+      width: 17px;
+      display: block;
+      height: 20px;
+      margin-top: 10px;
+    }
+    .role {
+      color: @dark-gray-color;
+      font-size: 12px;
+      margin-left: 10px;
+      .ivu-select-visible .ivu-select-selection,
+      .ivu-select-selection:hover, .ivu-select-selection-focused {
+        border: none;
+      }
+      .ivu-select-selection {
+        height: 40px;
+        border-radius: 15px;
+        border: none;
+        background-color: transparent;
+        color: @white-color;
+        box-shadow: none;
+        .ivu-select-arrow {
+          color: @white-color;
+        }
+        .ivu-select-selected-value {
+          height: 40px;
+          line-height: 40px;
+        }
+      }
+
+      .currentRole {
+        color: @primary-color;
+      }
+      .ivu-select-item-selected, .ivu-select-item-selected:hover {
+        color: @primary-color;
+        background: #f3f3f3;
+      }
+    }
+    .ivu-dropdown-rel {
+      //height: 48px;
+      height: 40px;
+    }
+    .username {
+      color: @white-color;
+      .name {
+        margin-left: 10px;
+        margin-right: 5px;
+      }
+    }
+    .line {
+      color: @auxiliary-color1;
+      margin-left: 10px;
+    }
+    .setting a, .signOut {
+      color: @auxiliary-color1;
+      margin-left: 10px;
+      cursor: pointer;
+      &:hover {
+        color: @primary-hover;
+      }
+    }
+  }
+
+}
+
+//menu-top end
+//menu-Slid start
+//.menu-slide .ivu-menu-vertical .ivu-menu-opened {
+//  background: @background-color;
+//}
+
+.menu-slide .ivu-menu-submenu.ivu-menu-opened .ivu-menu {
+  background-color: @auxiliary-color1;
+  color: @auxiliary-text-color;
+}
+
+.menu-slide .ivu-menu-vertical .ivu-menu-opened .ivu-menu-submenu-title {
+  background: @primary-color;
+  color: #FFF;
+}
+
+.menu-slide .ivu-menu-vertical .ivu-menu-opened .ivu-menu-submenu-title:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 4px;
+  background: #fff;
+  left: 0;
+  height: 32px;
+  top: 13px;
+}
+
+.menu-slide {
+  position: fixed;
+  height: 100%;
+  padding-top: 40px;
+  z-index: 40;
+  left: 0;
+  top: 40px;
+  transition: all 368ms;
+  //background-color: @background-color;
+  background: url(../image/bgLeft.png) no-repeat 0 292px;
+  background-size: 210px 426px;
+}
+
+.menu-slide.hide {
+  opacity: 0;
+  left: -256px;
+  transition-delay: 0ms;
+}
+
+.menu-slide .ivu-menu {
+  cursor: pointer;
+  //padding: 3px 0;
+  color: #fff;
+  text-align: left;
+  //background: @background-color;
+  background: transparent;
+}
+
+.menu-slide .ivu-menu-vertical .ivu-menu-item-group-title {
+  font-size: 14px;
+}
+
+.menu-slide i.ivu-icon {
+  font-size: 16px;
+}
+
+.menu-slide .ivu-menu-item {
+  font-size: 14px;
+}
+
+.menu-slide .ivu-menu-vertical.ivu-menu-light:after {
+  background: initial !important;
+}
+
+.ivu-menu-vertical .ivu-menu-submenu .ivu-menu-item {
+  user-select: none;
+  //margin-top: 5px;
+  //margin-bottom: 5px;
+  //padding-left: 20px !important;
+  //text-align:center;
+  padding-left: 65px !important;
+  text-align: left;
+}
+
+//.menu-slide .ivu-menu-vertical .ivu-menu-submenu .ivu-menu-item-active, .ivu-menu-vertical .ivu-menu-submenu .ivu-menu-item-active:hover{
+//  background: @white-hover !important;
+//}
+.menu-slide .ivu-menu-vertical .ivu-menu-item:hover, .ivu-menu-vertical .ivu-menu-submenu-title:hover {
+  color: @primary-hover;
+}
+
+.menu-slide .ivu-menu-submenu-title {
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.menu-slide .ivu-menu-submenu-title .ivu-icon:first-child {
+  font-size: 20px;
+  margin-top: -4px;
+}
+
+.menu-slide .ivu-menu .ivu-menu-item.ivu-menu-item-active {
+  font-weight: normal;
+  color: @primary-color;
+  background: @auxiliary-color1;
+}
+
+.menu-slide .ivu-menu .ivu-menu-item.ivu-menu-item-active:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 15px;
+  bottom: 0;
+  right: 0;
+  background: @auxiliary-color1;
+  width: 0;
+  height: 0;
+  border-width: 13px 13px 13px 0;
+  border-style: solid;
+  border-color: transparent #e3e3e3 transparent transparent;
+}
+
+.menu-slide .ivu-menu .ivu-menu-item-active .ivu-menu-submenu-title {
+  user-select: none;
+  color: @white-color;
+}
+
+.ivu-menu-vertical .ivu-menu-item, .ivu-menu-vertical .ivu-menu-submenu-title {
+  user-select: none;
+  padding: 16px 15px 17px 32px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.ivu-dropdown-item-menu {
+  padding-left: 10px !important;
+}
+
+.ivu-select-dropdown-menu {
+  width: inherit;
+  max-height: 200px;
+  overflow: hidden;
+  margin: 5px 0;
+  padding: 5px 0;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+  position: absolute;
+  z-index: 900;
+}
+
+.filter-content {
+  float: right;
+  padding: 0 20px;
+}
+
+.filter-content .ivu-date-picker {
+  padding: 10px 0 !important;
+}
+
+.filter-content a {
+  transition: color 0.2s ease;
+  color: #464c5b !important;
+}
+
+.filter-content a:hover {
+  color: #5cadff !important;
+}
+
+.only {
+  &-tag {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    margin-right: 10px;
+    transform: translateY(1px);
+
+    &--warning {
+      background-color: @tips-color;
+    }
+
+    &--primary {
+      background-color: @primary-color;
+    }
+
+    &--default {
+      background-color: @mid-gray-color;
+    }
+
+    &--error {
+      background-color: @error-color;
+    }
+
+    &--success {
+      background-color: @success-color;
+    }
+  }
+}
+.tableFoot{
+  display: flex;
+  justify-content: space-between;
+}
+.exportBtn{
+  height: 28px;
+  border-radius: 14px;
+  text-align: center;
+  padding: 0 8px;
+  margin-left: 10px;
+  color: #07C4FE;
+  border: 1px solid #07C4FE;
+  background-color: #F1FCFF;
+  margin-top: 10px;
+  min-width: 66px;
+  &:hover{
+    color: #50d6ff;
+    border: 1px solid #50d6ff;
+  }
+}
+
+//menu-Slid end

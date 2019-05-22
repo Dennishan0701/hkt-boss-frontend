@@ -1,0 +1,486 @@
+@import "standard.less";
+@import "iconfont/iconfont.css";
+
+.workbench-content {
+  .workbench-head {
+    padding: 18px 0 14px 20px;
+    background-color: @white-color;
+    .workbenchTitle {
+      display: flex;
+      justify-content: space-between;
+      width: 892px;
+      margin-bottom: 18px;
+      .tit {
+        color: @dark-gray-color;
+      }
+      .see7 {
+        color: @primary-color;
+        cursor: pointer;
+      }
+    }
+    .workbenchData {
+      display: flex;
+      li {
+        display: flex;
+        justify-content: space-between;
+        width: 290px;
+        height: 90px;
+        position: relative;
+        padding: 0 44px 0 16px;
+        box-shadow: 0px 2px 20px 0px rgba(101, 110, 125, 0.2);
+        margin-right: 11px;
+        &:after {
+          content: "";
+          width: 4px;
+          height: 90px;
+          background-color: @auxiliary-color3;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        .workDate {
+          color: @dark-gray-color;
+          font-size: 18px;
+          margin: 16px 108px 0 0px;
+          span {
+            font-size: 12px;
+          }
+        }
+        .workNum {
+          line-height: 90px;
+          font-size: 18px;
+          color: @auxiliary-color3;
+        }
+
+        &:nth-child(2) {
+          .workNum {
+            color: @success-color;
+            cursor: pointer;
+          }
+        }
+        &:nth-child(3) {
+          .workNum {
+            color: @tips-color;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .reminder {
+      margin-top: 23px;
+      position: relative;
+      width: 590px;
+      padding: 32px 0 18px 28px;
+      background-color: @tableBgColor1;
+      max-height: 150px;
+      overflow-y: scroll;
+      li {
+        span {
+          color: @mid-gray-color;
+          margin-left: 20px;
+        }
+      }
+      li:first-child {
+        position: absolute;
+        width: 64px;
+        height: 24px;
+        background: url(../image/label2.png) no-repeat center;
+        color: @white-color;
+        text-align: center;
+        line-height: 18px;
+        font-size: 12px;
+        position: absolute;
+        top: 0px;
+        left: -6px;
+      }
+      li:not(:first-child) {
+        font-size: 12px;
+        line-height: 32px;
+        cursor: pointer;
+        color: @dark-gray-color;
+        &:hover {
+          color: @dark-gray-hover;
+        }
+        &.hasRead {
+          color: @mid-gray-color;
+          &:hover {
+            //color: @mid-gray-hover;
+          }
+        }
+      }
+    }
+  }
+  .workbench-head2 {
+    padding: 20px 0 20px 94px;
+    background-color: @white-color;
+    display: flex;
+    .headLeft {
+      margin-right: 114px;
+      img {
+        display: block;
+        width: 90px;
+        margin-bottom: 16px;
+      }
+      p {
+        font-size: 18px;
+        color: @dark-gray-color;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+    }
+    .headRight {
+      .workbenchData {
+        display: flex;
+        li {
+          width: 140px;
+          height: 100px;
+          box-shadow: 0px 2px 20px 0px rgba(101, 110, 125, 0.2);
+          border-radius: 2px;
+          margin-right: 10px;
+          text-align: center;
+          .workDate {
+            color: @dark-gray-color;
+            font-size: 14px;
+            margin: 18px 0 17px 0px;
+          }
+          .workNum {
+            font-size: 18px;
+            color: @tips-color;
+          }
+          &:last-child {
+            .workNum {
+              color: @error-color;
+            }
+          }
+        }
+      }
+      .stayIn {
+        font-size: 14px;
+        color: @dark-gray-color;
+        margin-top: 30px;
+      }
+    }
+  }
+  .workbench-container {
+    margin-top: 20px;
+    .workbench-Body {
+      background-color: @white-color;
+      padding: 18px 0 40px 20px;
+      display: flex;
+      .bodyLeft{
+        width: 520px;
+        margin-right: 21px;
+        .bar1{
+          padding: 15px 10px 10px 10px;
+          box-shadow:0px 2px 20px 0px rgba(101,110,125,0.2);
+          margin-bottom: 20px;
+        }
+      }
+      .workbenchTitle {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 14px;
+        padding-right: 20px;
+        .tit {
+          color: @dark-gray-color;
+          line-height: 28px;
+        }
+        .submit {
+          width: 70px;
+          height: 28px;
+          background: @primary-color;
+          border-radius: 14px;
+          text-align: center;
+          padding: 0;
+          color: #ffffff;
+          border: none;
+          margin-left: 260px;
+          outline: none;
+          cursor: pointer;
+        }
+      }
+      .completStatus {
+        display: flex;
+        li {
+          width: 160px;
+          height: 100px;
+          padding: 14px 0px 0 18px;
+          background-color: @tableBgColor1;
+          border-radius: 4px;
+          margin-right: 10px;
+          //margin-bottom: 50px;
+          &:last-child{
+            margin-right: 0px;
+          }
+          .workDate {
+            color: @dark-gray-color;
+            font-size: 18px;
+            span {
+              font-size: 12px;
+              margin-left: 10px;
+            }
+          }
+          .workNum {
+            line-height: 20px;
+            font-size: 12px;
+            color: @mid-gray-color;
+            margin-top: 4px;
+            span {
+              margin-left: 40px;
+              color: @primary-color;
+              font-size: 16px;
+            }
+          }
+          &:nth-child(2) {
+            .workNum {
+              span {
+                color: @success-color;
+              }
+            }
+          }
+          &:nth-child(3) {
+            .workNum {
+              span {
+                color: @tips-color;
+              }
+            }
+          }
+        }
+      }
+      .workForm {
+        .formTitle {
+          display: flex;
+          li {
+            width: 70px;
+            height: 28px;
+            border-radius: 14px;
+            line-height: 28px;
+            text-align: center;
+            font-size: 16px;
+            color: @mid-gray-color;
+            cursor: pointer;
+            margin-bottom: 20px;
+          }
+          li.active {
+            background: @primary-color;
+            color: @white-color;
+          }
+        }
+      }
+      .DPS{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 22px 10px 10px 20px;
+        box-shadow:0px 2px 20px 0px rgba(101,110,125,0.2);
+      }
+      .performance {
+        margin-top: 0;
+        padding: 14px 10px 18px 10px;
+        box-shadow:0px 2px 20px 0px rgba(101,110,125,0.2);
+        .tableTitle {
+          margin-bottom: 20px;
+          color: @dark-gray-color;
+          font-size: 14px;
+          margin-left: 10px;
+        }
+        .tableData1{
+          display: flex;
+          margin-left: 10px;
+          ul{
+            width: 200px;
+            &:first-child{
+              margin-right: 30px;
+            }
+            li{
+              line-height: 30px;
+              span:first-child{
+                display: inline-block;
+                width: 84px;
+                margin-right: 52px;
+              }
+              span{
+                color: @dark-gray-color;
+                font-size: 12px;
+              }
+            }
+          }
+        }
+        .tableData2 {
+          display: flex;
+          margin-top: 10px;
+          li {
+            width: 160px;
+            height: 100px;
+            border-radius: 2px;
+            margin-right: 10px;
+            text-align: center;
+            background-color: @tableBgColor1;
+            .workDate {
+              color: @dark-gray-color;
+              font-size: 14px;
+              margin: 18px 0 17px 0px;
+            }
+            .workNum {
+              font-size: 18px;
+              color: @tips-color;
+            }
+          }
+        }
+      }
+      .bodyRight{
+        .rightTitle{
+          width:380px;
+          height:60px;
+          line-height:60px;
+          background:rgba(255,189,166,1);
+          border-radius:4px;
+          text-align: center;
+          color: @white-color;
+        }
+        .dataList{
+          width:380px;
+          background:@tableBgColor1;
+          border-radius:4px;
+          margin-top: 20px;
+          padding-bottom: 10px;
+          .dataTitle{
+            padding: 0 20px 10px 10px;
+            display: flex;
+            justify-content: space-between;
+            line-height: 32px;
+            font-size: 16px;
+            color: @dark-gray-color;
+            background: url("../image/top.png") no-repeat top left;
+            background-size:134px 34px;
+            span.more{
+              font-size:14px;
+              color: @primary-color;
+              cursor: pointer;
+            }
+          }
+          ul{
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 20px;
+            li{
+              text-align: center;
+              font-size:14px;
+              color: @mid-gray-color;
+              line-height: 32px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .workbench-foot {
+    width: 380px;
+    margin-top: 10px;
+    padding: 32px 0 70px 0px;
+    background-color: @white-color;
+    .achieveHead{
+      display: flex;
+      justify-content: space-between;
+      .ivu-select-selection,
+      .ivu-select-selection:hover, .ivu-select-selection-focused{
+        border: none;
+        box-shadow:none;
+        color: @mid-gray-color;
+      }
+      .ivu-select-selected-value{
+        font-size: 14px;
+      }
+      .ivu-select-arrow{
+        color: @mid-gray-color;
+        font-size: 14px;
+      }
+    }
+    .achieveTitle {
+      display: flex;
+      li {
+        width: 70px;
+        height: 28px;
+        border-radius: 14px;
+        line-height: 28px;
+        text-align: center;
+        font-size: 16px;
+        color: @mid-gray-color;
+        cursor: pointer;
+        margin-bottom: 26px;
+      }
+      li.active {
+        background: @primary-color;
+        color: @white-color;
+      }
+    }
+    .workAchieve {
+      display: flex;
+      .ranking {
+        &:first-child {
+          margin-left: 0;
+        }
+        margin-left: 10px;
+        width: 380px;
+        height: 422px;
+        background: @white-color;
+        box-shadow: 0px 2px 20px 0px rgba(101, 110, 125, 0.2);
+        border-radius: 4px;
+        padding: 16px 0 20px 20px;
+        position: relative;
+        overflow: hidden;
+        .sign {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 0;
+          height: 0;
+          border-top: 54px solid @tips-color;
+          border-left: 54px solid transparent;
+          span {
+            position: absolute;
+            font-size: 16px;
+            color: @white-color;
+            top: -50px;
+            right: 9px;
+          }
+        }
+        .rankTit {
+          color: @dark-gray-color;
+          font-size: 14px;
+          margin-bottom: 10px;
+        }
+        .rankBody {
+          li {
+            display: flex;
+            line-height: 35px;
+            span {
+              display: inline-block;
+              font-size: 14px;
+              color: @dark-gray-color;
+            }
+            span:first-child {
+              margin-right: 16px;
+              width: 20px;
+              text-align: center;
+              padding-left: 4px;
+              img {
+                vertical-align: -4px;
+                margin-left: -4px;
+
+              }
+            }
+            span:nth-child(2) {
+              margin-right: 130px;
+              width: 80px;
+            }
+            &:nth-child(10) {
+              span:first-child {
+                padding-left: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

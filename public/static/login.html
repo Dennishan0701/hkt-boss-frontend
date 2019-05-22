@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="icon" href="images/favicon.ico" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/Ie.js"></script>
+    <script src="js/sha512.js"></script>
+    <script src="js/apiConfig.js"></script>
+    <script src="js/apiConfigLocal.js"></script>
+</head>
+<body>
+<div class="loginMain">
+    <div class="main-logo-box">
+        <div class="logo-title">BOSS后台管理系统</div>
+    </div>
+    <div class="loginBody clearfix">
+        <!-- <img class="FL" src="images/login/left.png" alt="图片"> -->
+        <form class="loginCon">
+            <!-- <img class="logo" src="images/login/logo2.png" alt="logo"> -->
+            <div class="form">
+                <input type="text" class="username phone" placeholder="请输入账号" value="">
+                <input type="password" class="password" placeholder="密码" autocomplete="new-password" value="">
+                <p class="sendError"><span>网络错误</span></p>
+            </div>
+            <div class="foot">
+                <p class="submit">登录平台</p>
+            </div>
+        </form>
+        <!--<p><a id="resetPwd" href="resetPwd.html">忘记密码?</a></p>-->
+    </div>
+</div>
+</body>
+<script>
+  $(function () {
+    //    验证11位数字，且开头是1
+    var mobileReg = /^1\d{10}$/;
+//    var pwdReg = /^(?![\d]+$)(?![a-zA-Z]+$)(?![^\da-zA-Z]+$).{6,20}$/;
+    $(".username,.password").focus(function () {
+      $(".sendError").css({"opacity": "0"});
+    });
+    $('.submit').click(function () {
+      console.log(111);
+      // var timestemp = new Date().getTime();
+      var timestemp = "1542872140281";
+      var pwd1 = sha512($('.username').val() + "&" + $('.password').val() + ":onlyhi");
+      var pwd = sha512(pwd1 + timestemp);
+      $.ajax({
+        type: 'post',
+        url: API + "/auth/login",
+        dataType: 'json',
+        data: {
+          username: $('.username').val(),
+          password: $('.password').val(),
+        },
+        beforeSend: function () {
+          var username = $('.username').val();
+          var password = $('.password').val();
+          if (username == '') {
+            $('.form').find('.username').val("").attr({placeholder: "请输入正确的用户名"}).focus();
+            return false;
+          }
+          else {
+//              if (!mobileReg.test(username)) {
+//                $('.form').find('.username').val("").attr({placeholder: "请输正确的用户名"}).focus();
+//                return false;
+//              }
+          }
+          if (password == '') {
+            $('.form').find('.password').val("").attr({placeholder: "请输入密码"}).focus();
+            return false;
+          }
+//          else{
+//            if (!pwdReg.test(password)) {
+//              $('.form').find('.error').fadeOut('fast', function(){
+//                $('.error').css('top', '73px');
+//              });
+//              $('.form').find('.error').fadeIn('fast', function(){
+//                $('.form').find('.password').attr({placeholder: "请输入6-20位包含字母和数字的密码"}).focus().val("");
+//              });
+//              return false;
+//            }
+//          }
+          if (username != '' && password != '') {
+            $(".sendError").css({"opacity": "0"});
+            $(".submit").css({
+              "color": "transparent",
+              "background": "url(images/login/load.gif) no-repeat center"
+            });
+          }
+        },
+        success: function (res) {
+          $(".submit").css({
+            "color": " #fff",
+            "background": "none"
+          });
+          if (res.code == 200 && res.status === "success") {
+            sessionStorage.setItem('auth_user', JSON.stringify(res.data.user));
+            localStorage.setItem('token', res.data.access_token);
+            console.log(window.location.origin);
+            var isFirst;
+            if($('.password').val()=="123456"){
+                isFirst = 'true';
+            }
+            else{
+              isFirst = 'false';
+            }
+            sessionStorage.setItem("isFirst",isFirst);
+            window.location.href = window.location.origin;
+
+          } else if (res.message && res.message.length && (new RegExp("^[\\u4e00-\\u9fa5]$")).test(res.message[0])) {
+            $(".sendError span").text(res.message);
+            $(".sendError").css({"opacity": "1"});
+          } else {
+            $(".sendError span").text('登录失败');
+            $(".sendError").css({"opacity": "1"}); 
+          }
+        },
+        error: function () {
+          $(".submit").css({
+            "color": " #fff",
+            "background": "none"
+          });
+          $(".sendError span").text("请检查网络连接");
+          $(".sendError").css({"opacity": "1"});
+        }
+      })
+    })
+    document.onkeyup = function (e) {
+      var code = e.charCode || e.keyCode;
+      if (code == 13) {
+        $('.submit').trigger('click')
+      }
+    }
+  })
+</script>
+</html>

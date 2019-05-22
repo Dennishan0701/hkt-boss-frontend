@@ -1,0 +1,998 @@
+@import "standard.less";
+//弹窗样式
+/*滚动条样式*/
+::-webkit-scrollbar { /*滚动条整体样式*/
+  width: 10px; /*高宽分别对应横竖滚动条的尺寸*/
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+  border-radius: 3px;
+  background: #99cbe2;
+}
+
+::-webkit-scrollbar-track { /*滚动条里面轨道*/
+  border-radius: 0;
+  //background: #f0f1f3;
+  background: #e3e3e3;
+}
+
+.modals {
+  .ivu-modal-footer {
+    display: none;
+  }
+  .ivu-modal-body {
+    padding: 0;
+    overflow: visible;
+  }
+  .ivu-modal-close .ivu-icon-ios-close {
+    //top: -10px;
+    //right: -10px;
+    display: none;
+  }
+  .closeModal {
+    font-size: 31px;
+    color: #999;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: 3;
+  }
+}
+
+//拨打弹窗
+.dialModal {
+  .modalCon {
+    padding: 20px 20px 12px 10px;
+    display: flex;
+    .left {
+      width: 210px;
+      position: relative;
+      //p.label{
+      //  position: absolute;
+      //  top:100px;
+      //  left: -20px;
+      //  width:26px;
+      //  height: 88px;
+      //  background: url(../../assets/image/label3.png) no-repeat center;
+      //  background-size: cover;
+      //  font-size: 12px;
+      //  line-height: 20px;
+      //  color: #fff;
+      //  span{
+      //    position: absolute;
+      //    top:50%;
+      //    left: 50%;
+      //    transform: translate(-50%,-50%);
+      //    width: 13px;
+      //  }
+      //}
+      .position {
+        color: @tips-color;
+        line-height: 28px;
+      }
+      .stuInfo {
+        margin-top: 20px;
+        color: @dark-gray-color;
+        font-size: 18px;
+        text-align: center;
+        line-height: 24px;
+        .dialBg {
+          margin-top: 20px;
+          margin-bottom: 16px;
+          width: 100%;
+          height: 80px;
+          position: relative;
+          #loading-center-absolute {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            height: 24px;
+            width: 108px;
+            margin-top: -12px;
+            margin-left: -54px;
+            .object {
+              width: 2px;
+              height: 24px;
+              margin-right: 4px;
+              background-color: #FFF;
+              -webkit-animation: animate 1s infinite;
+              animation: animate 1s infinite;
+              float: left;
+              background-color: #61B363;
+            }
+            .object:last-child {
+              margin-right: 0px;
+            }
+            //.object:nth-child(11) {
+            //  -webkit-animation-delay: 1s;
+            //  animation-delay: 1s;
+            //}
+            .object:nth-child(10) {
+              -webkit-animation-delay: 0.9s;
+              animation-delay: 0.9s;
+            }
+            .object:nth-child(9), .object:nth-child(19) {
+              -webkit-animation-delay: 0.8s;
+              animation-delay: 0.8s;
+            }
+            .object:nth-child(8), .object:nth-child(18) {
+              -webkit-animation-delay: 0.7s;
+              animation-delay: 0.7s;
+            }
+            .object:nth-child(7), .object:nth-child(17) {
+              -webkit-animation-delay: 0.6s;
+              animation-delay: 0.6s;
+            }
+            .object:nth-child(6), .object:nth-child(16) {
+              -webkit-animation-delay: 0.5s;
+              animation-delay: 0.5s;
+            }
+            .object:nth-child(5), .object:nth-child(15) {
+              -webkit-animation-delay: 0.4s;
+              animation-delay: 0.4s;
+            }
+            .object:nth-child(4), .object:nth-child(14) {
+              -webkit-animation-delay: 0.3s;
+              animation-delay: 0.3s;
+            }
+            .object:nth-child(3), .object:nth-child(13) {
+              -webkit-animation-delay: 0.2s;
+              animation-delay: 0.2s;
+            }
+            .object:nth-child(2), .object:nth-child(12) {
+              -webkit-animation-delay: 0.1s;
+              animation-delay: 0.1s;
+            }
+            @-webkit-keyframes animate {
+
+              50% {
+                -ms-transform: scaleY(0);
+                -webkit-transform: scaleY(0);
+                transform: scaleY(0);
+
+              }
+            }
+            @keyframes animate {
+              50% {
+                -ms-transform: scaleY(0);
+                -webkit-transform: scaleY(0);
+                transform: scaleY(0);
+              }
+            }
+          }
+          .dialPhone {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -40px;
+            cursor: pointer;
+            width: 80px;
+            height: 80px;
+            z-index: 3;
+            background: url("../../assets/image/dial1.png") no-repeat center;
+            &:hover {
+              background: url("../../assets/image/dial1-2.png") no-repeat center;
+            }
+            &:active {
+              background: url("../../assets/image/dial1-3.png") no-repeat center;
+            }
+            &.dialing {
+              background: url("../../assets/image/dial2.png") no-repeat center;
+              &:hover {
+                background: url("../../assets/image/dial2-2.png") no-repeat center;
+              }
+              &:active {
+                background: url("../../assets/image/dial2-3.png") no-repeat center;
+              }
+            }
+          }
+        }
+        .stuName, .stuPhone {
+        }
+        .stuAddress {
+
+        }
+      }
+      .dialRecord {
+        margin-top: 14px;
+        width: 210px;
+        height: 248px;
+        overflow-y: scroll;
+        background: @tableBgColor1;
+        border-radius: 4px;
+        padding-left: 11px;
+        padding-top: 6px;
+        li {
+          margin-bottom: 18px;
+          p.dialTime {
+            color: @light-gray-color;
+            font-size: 12px;
+            span {
+              color: @tips-color;
+              margin-left: 22px;
+            }
+          }
+          p.dialResult {
+            color: @dark-gray-color;
+            word-wrap: break-word;
+            word-break: break-all;
+          }
+        }
+      }
+    }
+    .center {
+      width: 330px;
+      margin-left: 30px;
+      p.label {
+        color: @tips-color;
+        line-height: 28px;
+      }
+      .ivu-form-item {
+        margin-bottom: 14px;
+      }
+      .twoLevel.ivu-form-item {
+        .ivu-form-item-label {
+          width: 330px !important;
+        }
+        .ivu-form-item-content {
+          margin-left: 0 !important;
+        }
+      }
+      textarea.ivu-input {
+        width: 100%;
+        background-color: @tableBgColor1;
+        border-radius: 0;
+      }
+      .ivu-radio-wrapper {
+        width: 70px;
+        height: 28px;
+        border-radius: 14px;
+        text-align: center;
+        line-height: 28px;
+        background: @btn-bg3-color;
+        border: 1px solid @error-color;
+        color: @error-color;
+        margin-right: 10px;
+        cursor: pointer;
+        .ivu-radio {
+          display: none;
+        }
+        &.ivu-radio-wrapper-checked, .ivu-checkbox-wrapper-checked {
+          background: @error-color;
+          border: 1px solid @error-color;
+          color: @white-color;
+        }
+        &:nth-child(2) {
+          background: @btn-bg2-color;
+          border: 1px solid @tips-color;
+          color: @tips-color;
+          &.ivu-radio-wrapper-checked, .ivu-checkbox-wrapper-checked {
+            background: @tips-color;
+            border: 1px solid @tips-color;
+            color: @white-color;
+          }
+        }
+        &:nth-child(3) {
+          background: @btn-bg-color;
+          border: 1px solid @primary-color;
+          color: @primary-color;
+          margin-right: 0;
+          &.ivu-radio-wrapper-checked, .ivu-checkbox-wrapper-checked {
+            background: @primary-color;
+            border: 1px solid @primary-color;
+            color: @white-color;
+          }
+        }
+      }
+      & > p:first-child {
+        margin-bottom: 11px;
+      }
+      > p {
+        > span:first-child {
+          color: @light-gray-color;
+          font-size: 12px;
+          margin-right: 21px;
+          margin-bottom: 10px;
+        }
+      }
+      > div {
+        margin-bottom: 20px;
+
+      }
+      .recordCon p:nth-child(2) {
+        width: 100%;
+        height: 90px;
+        background-color: @tableBgColor1;
+        margin-top: 3px;
+        padding: 10px;
+      }
+      .ivu-select-selection {
+        background-color: @auxiliary-color4;
+        height: 28px;
+        border-radius: 14px;
+        border: none;
+      }
+      .ivu-select-single .ivu-select-selection .ivu-select-placeholder,
+      .ivu-select-single .ivu-select-selection .ivu-select-selected-value {
+        line-height: 28px;
+      }
+      .ivu-input {
+        border: none;
+        background-color: @auxiliary-color4;
+        height: 28px;
+        border-radius: 14px;
+      }
+      .ivu-input-icon {
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+      }
+      .ivu-input:focus {
+        box-shadow: none;
+      }
+      .priority {
+        display: flex;
+        li {
+          width: 70px;
+          height: 28px;
+          border-radius: 14px;
+          text-align: center;
+          line-height: 28px;
+          background: @btn-bg3-color;
+          border: 1px solid @error-color;
+          color: @error-color;
+          margin-right: 10px;
+          cursor: pointer;
+          &.active {
+            background: @error-color;
+            border: 1px solid @error-color;
+            color: @white-color;
+          }
+        }
+        li:nth-child(2) {
+          background: @btn-bg2-color;
+          border: 1px solid @tips-color;
+          color: @tips-color;
+          &.active {
+            background: @tips-color;
+            border: 1px solid @tips-color;
+            color: @white-color;
+          }
+        }
+        li:nth-child(3) {
+          background: @btn-bg-color;
+          border: 1px solid @primary-color;
+          color: @primary-color;
+          margin-right: 0;
+          &.active {
+            background: @primary-color;
+            border: 1px solid @primary-color;
+            color: @white-color;
+          }
+        }
+      }
+      .submit {
+        width: 70px;
+        height: 28px;
+        background: @primary-color;
+        border-radius: 14px;
+        border-radius: 14px;
+        text-align: center;
+        padding: 0;
+        color: @white-color;
+        border: none;
+        margin-left: 260px;
+        outline: none;
+        cursor: pointer;
+        &:hover {
+          background: @primary-hover;
+        }
+      }
+    }
+    .right {
+      margin-left: 9px;
+      display: flex;
+      .filesShow {
+        text-align: center;
+        color: @primary-color;
+        width: 11px;
+        line-height: 13px;
+        margin-top: 200px;
+        span {
+          cursor: pointer;
+          i {
+            margin-top: 10px;
+            display: inline-block;
+          }
+        }
+      }
+      .relatedFiles {
+        width: 160px;
+        margin-left: 20px;
+        p.search {
+          display: flex;
+          justify-content: space-between;
+          .ivu-input {
+            background-color: @auxiliary-color4;
+            border: none;
+            border-radius: 0px;
+            border-radius: 14px;
+            text-align: center;
+            height: 28px;
+          }
+          .ivu-input:focus {
+            box-shadow: none;
+          }
+          button.btn4 {
+            height: 28px;
+            line-height: 28px;
+            width: 28px;
+            border-radius: 14px;
+            text-align: center;
+            padding: 0;
+            color: @white-color;
+            border: none;
+            background-color: @primary-color;
+            font-size: 14px;
+            & > span {
+              vertical-align: 0;
+            }
+            &:hover {
+              background-color: @primary-hover;
+            }
+            &:focus {
+              box-shadow: none;
+            }
+            i {
+              //margin-right: 10px;
+              vertical-align: -1px;
+            }
+            //margin-top: 20px;
+          }
+        }
+        .relatedFiles2 {
+          padding: 8px 0 10px 10px;
+          margin-top: 20px;
+          width: 160px;
+          height: 300px;
+          background-color: @tableBgColor1;
+          overflow-y: scroll;
+          li {
+            line-height: 22px;
+            cursor: pointer;
+            color: @dark-gray-color;
+            &:hover {
+              color: @dark-gray-hover;
+            }
+          }
+        }
+        .activeFile {
+          font-size: 12px;
+          margin-top: 6px;
+          .activeTit {
+            line-height: 21px;
+            color: @light-gray-color;
+          }
+          p:not(:first-child) {
+            line-height: 21px;
+            color: @primary-color;
+            cursor: pointer;
+            &:hover {
+              color: @primary-hover;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//排课弹窗
+.title_outer {
+  padding: 5px 0 20px;
+  .title_inner {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2db7f5;
+    //margin-left: 22px;
+    border-bottom: 3px solid #2db7f5;
+    letter-spacing: 1px;
+    padding: 2px 0;
+  }
+}
+
+.arrClassModal {
+  .modalCon {
+    padding: 36px 20px 20px 30px;
+    .modalTitle {
+      color: @dark-gray-color;
+      text-align: center;
+      font-size: 16px;
+      margin-bottom: 28px;
+    }
+    .ivu-form-item {
+      margin-bottom: 20px;
+    }
+    .ivu-form .ivu-form-item-label {
+      padding: 0;
+      line-height: 32px;
+    }
+    .ivu-form .ivu-form-item-label {
+      color: @light-gray-color;
+    }
+    .ivu-select-single .ivu-select-selection {
+      height: 28px;
+      border: none;
+      background-color: @auxiliary-color4;
+      border-radius: 14px;
+    }
+    .ivu-form-item-content {
+      color: @dark-gray-color;
+    }
+    .chooseDate {
+      .ivu-input {
+        border: none;
+        background-color: @auxiliary-color4;
+        height: 28px;
+        border-radius: 14px;
+      }
+      .ivu-input-icon {
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+      }
+    }
+    .ivu-input:focus {
+      box-shadow: none;
+    }
+    .wrongUpload {
+      display: inline-block;
+      .wrongBtn {
+        width: 90px;
+        height: 28px;
+        background: #07C4FE;
+        border-radius: 14px;
+        text-align: center;
+        padding: 0;
+        color: #ffffff;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        line-height: 27px;
+        font-size: 14px;
+        &:hover {
+          background: #50d6ff;
+          color: #fff;
+        }
+      }
+      .ivu-btn.ivu-btn-loading {
+        position: absolute;
+      }
+    }
+    .line {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .ivu-form-item-label {
+        //width: 52px !important;
+      }
+      .ivu-form-item-content {
+        //margin-left: 52px !important;
+      }
+      .ivu-form-item:last-child {
+        .ivu-form-item-label {
+          //width: 70px !important;
+        }
+        .ivu-form-item-content {
+          //margin-left: 70px !important;
+        }
+      }
+      .label_name {
+        .ivu-form-item-label {
+          width: 50px !important;
+        }
+        .ivu-form-item-content {
+          margin-left: 60px !important;
+        }
+      }
+    }
+
+    .line2 {
+      width: 453px;
+      display: flex;
+      justify-content: space-between;
+      .ivu-form-item-label {
+        width: 90px !important;
+      }
+      .ivu-form-item-content {
+        margin-left: 90px !important;
+      }
+    }
+    .line3 {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .label_grade {
+        .ivu-form-item-label {
+          width: 54px !important;
+        }
+        .ivu-form-item-content {
+          margin-left: 60px !important;
+        }
+      }
+    }
+    textarea.ivu-input {
+      background-color: @tableBgColor1;
+      border: none;
+    }
+    .submit {
+      width: 70px;
+      height: 28px;
+      background: @primary-color;
+      border-radius: 14px;
+      text-align: center;
+      padding: 0;
+      color: @white-color;
+      border: none;
+      margin-left: 500px;
+      outline: none;
+      cursor: pointer;
+      &:hover {
+        background: @primary-hover;
+      }
+    }
+  }
+}
+
+//提交订单弹窗
+.placeOrderModal {
+  .modalCon {
+    padding: 36px 20px 20px 30px;
+    display: flex;
+    .left {
+      width: 550px;
+      position: relative;
+      .modalTitle {
+        color: @dark-gray-color;
+        text-align: center;
+        font-size: 16px;
+        margin-bottom: 28px;
+      }
+      .orderAmount {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        font-size: 12px;
+        span:first-child {
+          color: @dark-gray-color;
+          margin-right: 5px;
+          margin-left: 0;
+          vertical-align: 0.5px;
+          i {
+            font-size: 16px;
+            color: @error-color;
+            margin-left: 8px;
+            vertical-align: -1px;
+          }
+        }
+        span {
+          color: @tips-color;
+          margin-left: 14px;
+          i {
+            margin-left: 4px;
+          }
+        }
+      }
+      .ivu-form-item {
+        margin-bottom: 20px;
+      }
+      .ivu-form .ivu-form-item-label {
+        padding: 0;
+        line-height: 32px;
+      }
+      .ivu-form .ivu-form-item-label {
+        color: @light-gray-color;
+      }
+      .ivu-select-single .ivu-select-selection {
+        height: 28px;
+        border: none;
+        background-color: @auxiliary-color4;
+        border-radius: 14px;
+      }
+      .ivu-form-item-content {
+        color: @dark-gray-color;
+      }
+      .ivu-input {
+        background-color: @auxiliary-color4;
+        border: none;
+        border-radius: 14px;
+        text-align: center;
+        height: 28px;
+      }
+      .ivu-select-visible .ivu-select-selection {
+        box-shadow: none;
+      }
+      .ivu-input:focus {
+        box-shadow: none;
+      }
+      textarea.ivu-input {
+        text-align: left;
+      }
+      .chooseDate {
+        .ivu-input {
+          border: none;
+          background-color: @auxiliary-color4;
+          height: 28px;
+          border-radius: 14px;
+        }
+        .ivu-input-icon {
+          width: 28px;
+          height: 28px;
+          line-height: 28px;
+        }
+      }
+      .ivu-input:focus {
+        box-shadow: none;
+      }
+      textarea.ivu-input {
+        background-color: @tableBgColor1;
+        border: none;
+      }
+      .line1 {
+        width: 536px;
+        display: flex;
+        .ivu-form-item-label {
+          width: 100px !important;
+        }
+        .ivu-form-item-content {
+          margin-left: 100px !important;
+        }
+        .ivu-form-item {
+          margin-left: 34px;
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+        .ivu-form-item:first-child {
+          .ivu-form-item-label {
+            width: 50px !important;
+          }
+          .ivu-form-item-content {
+            margin-left: 50px !important;
+          }
+        }
+      }
+      .line2 {
+        width: 536px;
+        display: flex;
+        .ivu-form-item-label {
+          //width: 100px !important;
+        }
+        .ivu-form-item-content {
+          //margin-left: 100px !important;
+        }
+        .ivu-form-item {
+          margin-left: 34px;
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+        .ivu-form-item:first-child {
+          .ivu-form-item-label {
+            //width: 100px !important;
+          }
+          .ivu-form-item-content {
+            //margin-left: 100px !important;
+          }
+        }
+      }
+      .line3 {
+        width: 530px;
+        display: flex;
+        flex-wrap: wrap;
+        .ivu-form-item:nth-child(2n) {
+          margin-left: 23px;
+        }
+        .addDiscount {
+          height: 32px;
+          line-height: 32px;
+          color: @primary-color;
+          cursor: pointer;
+          margin-left: 10px;
+        }
+      }
+      .line4 {
+        width: 560px;
+        display: flex;
+        flex-wrap: wrap;
+
+        .ivu-form-item {
+          width: 220px;
+          .ivu-form-item-label {
+            // display: none;
+
+          }
+          .ivu-form-item-content {
+            margin-left: 0 !important;
+          }
+
+        }
+
+        .addDiscount {
+          height: 32px;
+          line-height: 32px;
+          color: @primary-color;
+          cursor: pointer;
+          margin-left: 10px;
+        }
+      }
+      .line5 {
+        width: 516px;
+        display: flex;
+        //justify-content: space-between;
+        .ivu-form-item {
+          margin-left: 34px;
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+        .ivu-form-item-content {
+          min-width: 90px;
+        }
+        .ivu-form-item:nth-child(2n) {
+
+          .ivu-form-item-label {
+            width: 120px !important;
+          }
+          .ivu-form-item-content {
+            margin-left: 120px !important;
+            min-width: 200px;
+          }
+          margin-left: 34px;
+        }
+      }
+
+      .btnWrap{
+        text-align: right;
+        //padding-right: 40px;
+        .submit {
+          width: 90px;
+          height: 28px;
+          background: @primary-color;
+          border-radius: 14px;
+          border-radius: 14px;
+          text-align: center;
+          margin-right: 30px;
+          padding: 0;
+          color: @white-color;
+          border: none;
+          //margin-left: 460px;
+          margin-top: 20px;
+          outline: none;
+          cursor: pointer;
+          &:hover {
+            background: @primary-hover;
+          }
+        }
+
+      }
+    }
+    .right {
+      margin-left: 9px;
+      display: flex;
+      .filesShow {
+        text-align: center;
+        color: @primary-color;
+        width: 11px;
+        line-height: 13px;
+        margin-top: 200px;
+        span {
+          cursor: pointer;
+          i {
+            margin-top: 10px;
+            display: inline-block;
+          }
+        }
+      }
+      //价格明细
+      .priceDetails {
+        width: 180px;
+        margin-left: 20px;
+        position: relative;
+        .priceHead {
+          margin-bottom: 10px;
+          .priceTitle {
+            font-size: 16px;
+            color: @dark-gray-color;
+          }
+          .priceTip {
+            color: @tips-color;
+            font-size: 12px;
+            margin-top: 2px;
+          }
+        }
+        .priceBody {
+          border-bottom: 1px solid @mid-gray-hover;
+          padding-bottom: 20px;
+          li {
+            margin-bottom: 10px;
+            div.activity{
+              display: flex;
+              justify-content: space-between;
+              line-height:24px;
+              font-size: 12px;
+              p:first-child {
+                color: @dark-gray-color;
+                span{
+                  color: @error-color;
+                  vertical-align: -3px;
+                  margin-right: 1px;
+                }
+              }
+              p:nth-child(2) {
+                color: @mid-gray-color;
+              }
+              p.coupon {
+                color: @tips-color;
+              }
+            }
+            &>p{
+              font-size: 12px;
+              color: @mid-gray-color;
+              span{
+                display: block;
+              }
+            }
+          }
+        }
+        .priceBody2 {
+          margin-top: 12px;
+          li {
+            display: flex;
+            justify-content: space-between;
+            line-height: 30px;
+            font-size: 12px;
+            p:first-child {
+              color: @dark-gray-color;
+            }
+            p:nth-child(2) {
+              color: @error-color;
+            }
+            &.fracture {
+              p {
+                color: @tips-color;
+                span{
+                  color: @dark-gray-color;
+                }
+              }
+            }
+          }
+        }
+        .priceFoot {
+          position: absolute;
+          bottom: -8px;
+          left: 0;
+          width: 180px;
+          color: @light-gray-color;
+          p.closingDate {
+            margin-bottom: 8px;
+            i {
+              vertical-align: -1.5px;
+              margin-right: 6px;
+            }
+          }
+          ul {
+            li {
+              display: flex;
+              justify-content: space-between;
+              line-height: 30px;
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

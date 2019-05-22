@@ -1,0 +1,52 @@
+.OCR {
+  &-title {
+    color: #656e7d;
+    font-size: 18px;
+    font-weight: bolder;
+    line-height: 28px;
+    margin-bottom: 10px;
+    border-left: 4px solid #07C4FE;
+    padding-left: 15px;
+  }
+  &-modal {
+    .ivu-modal-footer {
+      display: inherit;
+    }
+  }
+  &-classPlan {
+    width: 800px;
+    border-radius: 10px;
+    background: #F6FAFC url('../../../../../../../../assets/image/pcbg.png') no-repeat left bottom;
+    min-height: 130px;
+    padding: 30px 0 30px 220px;
+
+    &__item {
+      overflow: hidden;
+      float: left;
+      position: relative;
+      &--fill {
+        width: 100%;
+      }
+      &--col3 {
+        width: 33.333333333%;
+      }
+    }
+
+    &__label {
+      position: absolute;
+      left: 0;
+      top: 0;
+      &::after {
+        content: '：';
+      }
+    }
+
+    &__table {
+      margin: 15px 0;
+    }
+
+    &__content {
+      padding-left: 6em;
+    }
+  }
+}
